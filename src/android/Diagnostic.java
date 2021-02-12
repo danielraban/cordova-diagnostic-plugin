@@ -88,7 +88,6 @@ public class Diagnostic extends CordovaPlugin{
         Diagnostic.addBiDirMapEntry(_permissionsMap, "ACCESS_FINE_LOCATION", Manifest.permission.ACCESS_FINE_LOCATION);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "ACCESS_COARSE_LOCATION", Manifest.permission.ACCESS_COARSE_LOCATION);
         // Add as string as Manifest.permission.ACCESS_BACKGROUND_LOCATION not defined in < API 29:
-        Diagnostic.addBiDirMapEntry(_permissionsMap, "ACCESS_BACKGROUND_LOCATION", "android.permission.ACCESS_BACKGROUND_LOCATION");
         Diagnostic.addBiDirMapEntry(_permissionsMap, "RECORD_AUDIO", Manifest.permission.RECORD_AUDIO);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_PHONE_STATE", Manifest.permission.READ_PHONE_STATE);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "CALL_PHONE", Manifest.permission.CALL_PHONE);
@@ -491,10 +490,6 @@ public class Diagnostic extends CordovaPlugin{
             if(!permissionsMap.containsKey(permission)){
                 throw new Exception("Permission name '"+permission+"' is not a valid permission");
             }
-            if(Build.VERSION.SDK_INT < 29 && permission.equals("ACCESS_BACKGROUND_LOCATION")){
-                // This version of Android doesn't support background location permission so check for standard coarse location permission
-                permission = "ACCESS_COARSE_LOCATION";
-            }
             String androidPermission = permissionsMap.get(permission);
             Log.v(TAG, "Get authorisation status for "+androidPermission);
             boolean granted = hasPermission(androidPermission);
@@ -799,10 +794,6 @@ public class Diagnostic extends CordovaPlugin{
             for (int i = 0, len = permissions.length; i < len; i++) {
                 String androidPermission = permissions[i];
                 String permission = permissionsMap.get(androidPermission);
-                if(Build.VERSION.SDK_INT < 29 && permission.equals("ACCESS_BACKGROUND_LOCATION")){
-                    // This version of Android doesn't support background location permission so use standard coarse location permission
-                    permission = "ACCESS_COARSE_LOCATION";
-                }
                 String status;
                 if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
                     boolean showRationale = shouldShowRequestPermissionRationale(this.cordova.getActivity(), androidPermission);

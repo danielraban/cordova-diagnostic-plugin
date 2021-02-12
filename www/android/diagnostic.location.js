@@ -43,8 +43,7 @@ var Diagnostic_Location = (function(){
 
     function combineLocationStatuses(statuses){
         var coarseStatus = statuses[Diagnostic.permission.ACCESS_COARSE_LOCATION],
-            fineStatus = statuses[Diagnostic.permission.ACCESS_FINE_LOCATION],
-            backgroundStatus = statuses[Diagnostic.permission.ACCESS_BACKGROUND_LOCATION],
+            fineStatus = statuses[Diagnostic.permission.ACCESS_FINE_LOCATION]
             status;
 
         if(coarseStatus === Diagnostic.permissionStatus.DENIED_ALWAYS || fineStatus === Diagnostic.permissionStatus.DENIED_ALWAYS){
@@ -246,8 +245,7 @@ var Diagnostic_Location = (function(){
         }
         Diagnostic.getPermissionsAuthorizationStatus(onSuccess, errorCallback, [
             Diagnostic.permission.ACCESS_COARSE_LOCATION,
-            Diagnostic.permission.ACCESS_FINE_LOCATION,
-            Diagnostic.permission.ACCESS_BACKGROUND_LOCATION
+            Diagnostic.permission.ACCESS_FINE_LOCATION
         ]);
     };
 
