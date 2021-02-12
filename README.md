@@ -367,7 +367,7 @@ In order to avoid build problems with Android, please make sure you have the lat
 * Make sure you have a [supported version](#minimum-supported-versions) of the `cordova-android` platform installed.
     * You can check if the Android platform in your Cordova project is up-to-date using `cordova platform check android` and if it's not, update it using `cordova platform rm android && cordova platform add android@latest`. 
     * Since `cordova.plugins.diagnostic@6` the recommended Cordova Android platform version is `cordova-android@9.0.0` (which includes AndroidX support).
-    * To use this plugin with `cordova-android@8`, install [cordova-plugin-androidx](https://github.com/dpa99c/cordova-plugin-androidx) and [cordova-plugin-androidx-adapter](https://github.com/dpa99c/cordova-plugin-androidx-adapter).    
+    * To use this plugin with `cordova-android@8`, install [cordova-plugin-androidx](https://github.com/danielraban/cordova-plugin-androidx) and [cordova-plugin-androidx-adapter](https://github.com/danielraban/cordova-plugin-androidx-adapter).    
 * Phonegap Build uses should use the latest available CLI version ([listed here](https://build.phonegap.com/current-support)) by specifying using the `phonegap-version` tag in your `config.xml`.
 
 # Installation
@@ -382,7 +382,7 @@ In order to avoid build problems with Android, please make sure you have the lat
 ## AndroidX Library
 This plugin uses/depends on the [AndroidX (Jetpack) libraries](https://developer.android.com/jetpack/androidx) (these supersede the [Android Support Library](https://developer.android.com/topic/libraries/support-library/index.html) which is no longer used by this plugin since `cordova.plugins.diagnostic@6`).
 
-This plugin pins a default version of the library in [its `plugin.xml`](https://github.com/dpa99c/cordova-diagnostic-plugin/blob/master/plugin.xml) however you can override this to specify a different version using the `ANDROIDX_VERSION` variable at plugin installation time, for example:
+This plugin pins a default version of the library in [its `plugin.xml`](https://github.com/danielraban/cordova-diagnostic-plugin/blob/master/plugin.xml) however you can override this to specify a different version using the `ANDROIDX_VERSION` variable at plugin installation time, for example:
 
     $ cordova plugin add cordova.plugins.diagnostic --variable ANDROIDX_VERSION=1.0.0
 
@@ -434,12 +434,12 @@ If you change the modules specified in the preference, you'll need to uninstall 
 Failure to follow the issue template guidelines below will result in the issue being immediately closed.
 
 ## Reporting a bug or problem
-Before [opening a bug issue](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/new?assignees=&labels=&template=bug_report.md&title=), please do the following:
+Before [opening a bug issue](https://github.com/danielraban/cordova-diagnostic-plugin/issues/new?assignees=&labels=&template=bug_report.md&title=), please do the following:
 - *DO NOT* open issues asking for support in using/integrating the plugin into your project
     - Only open issues for suspected bugs/issues with the plugin that are generic and will affect other users
     - I don't have time to offer free technical support: this is free open-source software
     - Ask for help on StackOverflow, Ionic Forums, etc.
-    - Use the [example project](https://github.com/dpa99c/cordova-diagnostic-plugin-example) as a known working reference
+    - Use the [example project](https://github.com/danielraban/cordova-diagnostic-plugin-example) as a known working reference
     - Any issues requesting support will be closed immediately.
 - *DO NOT* open issues related to the  [Ionic Typescript wrapper for this plugin](https://github.com/ionic-team/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts)
     - This is owned/maintained by [Ionic](https://github.com/ionic-team) and is not part of this plugin
@@ -447,14 +447,14 @@ Before [opening a bug issue](https://github.com/dpa99c/cordova-diagnostic-plugin
 	- To verify an if an issue is caused by this plugin or its Typescript wrapper, please re-test using the vanilla Javascript plugin interface (without the Ionic Native wrapper).
 	- Any issue opened here which is obviously an Ionic Typescript wrapper issue will be closed immediately.
 - Read the above documentation thoroughly
-- Check the [CHANGELOG](https://github.com/dpa99c/cordova-diagnostic-plugin/blob/master/CHANGELOG.md) for any breaking changes that may be causing your issue.
+- Check the [CHANGELOG](https://github.com/danielraban/cordova-diagnostic-plugin/blob/master/CHANGELOG.md) for any breaking changes that may be causing your issue.
 - Check a similar issue (open or closed) does not already exist against this plugin.
 	- Duplicates or near-duplicates will be closed immediately.
-- When [creating a new issue](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/new/choose)
+- When [creating a new issue](https://github.com/danielraban/cordova-diagnostic-plugin/issues/new/choose)
     - Choose the "Bug report" template
     - Fill out the relevant sections of the template and delete irrelevant sections
     - *WARNING:* Failure to complete the issue template will result in the issue being closed immediately. 
-- Reproduce the issue using the [example project](https://github.com/dpa99c/cordova-diagnostic-plugin-example)
+- Reproduce the issue using the [example project](https://github.com/danielraban/cordova-diagnostic-plugin-example)
 	- This will eliminate bugs in your code or conflicts with other code as possible causes of the issue
 	- This will also validate your development environment using a known working codebase
 	- If reproducing the issue using the example project is not possible, create an isolated test project that you are able to share
@@ -464,10 +464,10 @@ Before [opening a bug issue](https://github.com/dpa99c/cordova-diagnostic-plugin
         - To get the full detailed console output, append the `--verbose` flag to CLI build commands
         - e.g. `cordova build ios --verbose`
     - Failure to include the full console output will result in the issue being closed immediately
-- If the issue relates to the plugin documentation (and not the code), please of a [documentation issue](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/new?assignees=&labels=&template=documentation-issue.md&title=)
+- If the issue relates to the plugin documentation (and not the code), please of a [documentation issue](https://github.com/danielraban/cordova-diagnostic-plugin/issues/new?assignees=&labels=&template=documentation-issue.md&title=)
 
 ## Requesting a new feature
-Before [opening a feature request issue](https://github.com/dpa99c/cordova-diagnostic-plugin/issues/new?assignees=&labels=&template=feature_request.md&title=), please do the following:
+Before [opening a feature request issue](https://github.com/danielraban/cordova-diagnostic-plugin/issues/new?assignees=&labels=&template=feature_request.md&title=), please do the following:
 - Check the above documentation to ensure the feature you are requesting doesn't already exist
 - Check the list if open/closed issues to check if there's a reason that feature hasn't been included already
 - Ensure the feature you are requesting is actually possible to implement and generically useful to other users than yourself
@@ -563,7 +563,7 @@ Some things to watch out for:
  - If the relevant `<uses-permission>` tag is missing from the Android manifest, then the native API will return the NOT_REQUESTED/DENIED_ALWAYS constant value. Since the plugin is unable to make the native permissions request in order to show the native dialog, the plugin will always return NOT_REQUESTED.
 
 If [Android Autobackup](https://developer.android.com/guide/topics/data/backup.html#Choosing) is enabled (which it is by default ), Android does not backup app permissions after uninstall but does backup HTML5 local storage. This may lead to a permission being reported by the plugin as DENIED_ALWAYS when the actual status is NOT_REQUESTED.
-To avoid this you may want to disable Android Autobackup. You can do this using the [cordova-custom-config plugin](https://github.com/dpa99c/cordova-custom-config), for example: 
+To avoid this you may want to disable Android Autobackup. You can do this using the [cordova-custom-config plugin](https://github.com/danielraban/cordova-custom-config), for example: 
 
 ```
 <platform name="android">
@@ -1664,7 +1664,7 @@ Displays the device location settings to allow user to enable location services/
 
     cordova.plugins.diagnostic.switchToLocationSettings();
 
-Note: On Android, you may want to consider using the [Request Location Accuracy Plugin for Android](https://github.com/dpa99c/cordova-plugin-request-location-accuracy) to request the desired location accuracy without needing the user to manually do this on the Location Settings page.
+Note: On Android, you may want to consider using the [Request Location Accuracy Plugin for Android](https://github.com/danielraban/cordova-plugin-request-location-accuracy) to request the desired location accuracy without needing the user to manually do this on the Location Settings page.
 
 ## Bluetooth module
 
@@ -3491,7 +3491,7 @@ Some of functions offered by this plugin require specific permissions to be set 
 These permissions will not be set by this plugin, to avoid asking for unnecessary permissions in your app, in the case that you do not use a particular part of the plugin.
 Instead, you can add these permissions as necessary, depending what functions in the plugin you decide to use.
 
-You can add these permissions either by manually editing the AndroidManifest.xml in `/platforms/android/`, or define them in the config.xml and apply them using the [cordova-custom-config](https://github.com/dpa99c/cordova-custom-config) plugin, for example:
+You can add these permissions either by manually editing the AndroidManifest.xml in `/platforms/android/`, or define them in the config.xml and apply them using the [cordova-custom-config](https://github.com/danielraban/cordova-custom-config) plugin, for example:
 
     <platform name="android">
         <plugin name="cordova-custom-config" version="*"/>
@@ -3569,9 +3569,9 @@ Permissions are grouped as follows:
 
 ##### Runtime permissions example project
 
-While the [cordova-diagnostic-plugin-example](https://github.com/dpa99c/cordova-diagnostic-plugin-example) illustrates use of runtime permissions in the context of requesting location and camera access, the [cordova-diagnostic-plugin-android-runtime-example](https://github.com/dpa99c/cordova-diagnostic-plugin-android-runtime-example) project explicitly illustrates use of Android runtime permissions with this plugin:
+While the [cordova-diagnostic-plugin-example](https://github.com/danielraban/cordova-diagnostic-plugin-example) illustrates use of runtime permissions in the context of requesting location and camera access, the [cordova-diagnostic-plugin-android-runtime-example](https://github.com/danielraban/cordova-diagnostic-plugin-android-runtime-example) project explicitly illustrates use of Android runtime permissions with this plugin:
 
-[https://github.com/dpa99c/cordova-diagnostic-plugin-android-runtime-example](https://github.com/dpa99c/cordova-diagnostic-plugin-android-runtime-example)
+[https://github.com/danielraban/cordova-diagnostic-plugin-android-runtime-example](https://github.com/danielraban/cordova-diagnostic-plugin-android-runtime-example)
 
 ##### Android Camera permissions
 
@@ -3597,7 +3597,7 @@ Currently the plugin only supports Windows 10 and Windows 10 UWP, not Windows Ph
 
 The reason being that the native functionality required by the plugin's current Windows implementation is only available since Windows 10.
 
-For example, `isLocationAvailable()` [invokes](https://github.com/dpa99c/cordova-diagnostic-plugin/blob/master/src/windows/diagnosticProxy.js#L19) `Windows.Devices.Geolocation.Geolocator.requestAccessAsync()`. And this was only [introduced in Windows 10](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.requestaccessasync.aspx).
+For example, `isLocationAvailable()` [invokes](https://github.com/danielraban/cordova-diagnostic-plugin/blob/master/src/windows/diagnosticProxy.js#L19) `Windows.Devices.Geolocation.Geolocator.requestAccessAsync()`. And this was only [introduced in Windows 10](https://msdn.microsoft.com/library/windows/apps/windows.devices.geolocation.geolocator.requestaccessasync.aspx).
 
 Windows Phone 8.x would require a different implementation (even if possible), and I don't plan to add that since the Windows 8.x global marketshare is below 5% and falling, and is also rendered obsolete by Windows 10 UWP.
 
@@ -3633,28 +3633,28 @@ To override these defaults, you can use `<config-file>` blocks in your `config.x
 
 # Example project
 
-Example project using simple HTML/CSS/JS (no frameworks): [cordova-diagnostic-plugin-example](https://github.com/dpa99c/cordova-diagnostic-plugin-example)
+Example project using simple HTML/CSS/JS (no frameworks): [cordova-diagnostic-plugin-example](https://github.com/danielraban/cordova-diagnostic-plugin-example)
 
-Example project using Ionic Framework: [cordova-diagnostic-plugin-ionic-example](https://github.com/dpa99c/cordova-diagnostic-plugin-ionic-example)
+Example project using Ionic Framework: [cordova-diagnostic-plugin-ionic-example](https://github.com/danielraban/cordova-diagnostic-plugin-ionic-example)
 
-Phonegap Build users who want to validate the plugin in that environment can try building: [https://github.com/dpa99c/cordova-diagnostic-plugin-phonegap-build-example](https://github.com/dpa99c/cordova-diagnostic-plugin-phonegap-build-example)
+Phonegap Build users who want to validate the plugin in that environment can try building: [https://github.com/danielraban/cordova-diagnostic-plugin-phonegap-build-example](https://github.com/danielraban/cordova-diagnostic-plugin-phonegap-build-example)
 
 ## Screenshots
 
 ### Android
 
-![Android screenshot](https://raw.githubusercontent.com/dpa99c/cordova-diagnostic-plugin-example/master/screenshots/android_1.png)
-![Android screenshot](https://raw.githubusercontent.com/dpa99c/cordova-diagnostic-plugin-example/master/screenshots/android_2.png)
-![Android screenshot](https://raw.githubusercontent.com/dpa99c/cordova-diagnostic-plugin-example/master/screenshots/android_3.png)
+![Android screenshot](https://raw.githubusercontent.com/danielraban/cordova-diagnostic-plugin-example/master/screenshots/android_1.png)
+![Android screenshot](https://raw.githubusercontent.com/danielraban/cordova-diagnostic-plugin-example/master/screenshots/android_2.png)
+![Android screenshot](https://raw.githubusercontent.com/danielraban/cordova-diagnostic-plugin-example/master/screenshots/android_3.png)
 
 ### iOS
 
-![iOS screenshot](https://raw.githubusercontent.com/dpa99c/cordova-diagnostic-plugin-example/master/screenshots/ios_1.png)
-![iOS screenshot](https://raw.githubusercontent.com/dpa99c/cordova-diagnostic-plugin-example/master/screenshots/ios_2.png)
+![iOS screenshot](https://raw.githubusercontent.com/danielraban/cordova-diagnostic-plugin-example/master/screenshots/ios_1.png)
+![iOS screenshot](https://raw.githubusercontent.com/danielraban/cordova-diagnostic-plugin-example/master/screenshots/ios_2.png)
 
 # Release notes
 
-See the [CHANGELOG.md](https://github.com/dpa99c/cordova-diagnostic-plugin/blob/master/CHANGELOG.md)
+See the [CHANGELOG.md](https://github.com/danielraban/cordova-diagnostic-plugin/blob/master/CHANGELOG.md)
 
 # Credits
 
