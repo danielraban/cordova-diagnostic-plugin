@@ -14,7 +14,7 @@ var Diagnostic_Bluetooth = (function(){
      *********************/
     var Diagnostic_Bluetooth = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -105,7 +105,7 @@ var Diagnostic_Bluetooth = (function(){
      * Returns current state of Bluetooth hardware on the device.
      *
      * @param {Function} successCallback -  The callback which will be called when the operation is successful.
-     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.bluetoothState`.
+     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.bluetoothState`.
      * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
      *  This callback function is passed a single string parameter containing the error message.
      */
@@ -122,7 +122,7 @@ var Diagnostic_Bluetooth = (function(){
      * Pass in a falsey value to de-register the currently registered function.
      *
      * @param {Function} successCallback -  The callback which will be called when the state of Bluetooth hardware changes.
-     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.bluetoothState`.
+     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.bluetoothState`.
      */
     Diagnostic_Bluetooth.registerBluetoothStateChangeHandler = function(successCallback) {
         Diagnostic_Bluetooth._onBluetoothStateChange = successCallback || function(){};

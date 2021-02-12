@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    id="cordova.plugins.diagnostic"
-    version="6.0.3">
+    id="cordova.plugins.diagnostic.hathway"
+    version="6.0.4">
 
     <name>Diagnostic</name>
     <description>Cordova/Phonegap plugin to check the state of Location/WiFi/Camera/Bluetooth device settings.</description>
-    <author>Dave Alden</author>
+    <author>Dave Alden - forked by danielraban</author>
     <license>MIT</license>
     <keywords>ecosystem:cordova,cordova,phonegap,android,ios,windows,diagnostic,wifi,location,gps,camera,bluetooth,settings</keywords>
     <engines>
@@ -14,8 +14,6 @@
         <engine name="cordova-android" version=">=8.0.0"/>
         <engine name="cordova-ios" version=">=5.0.0"/>
     </engines>
-    <repo>https://github.com/danielraban/cordova-diagnostic-plugin.git</repo>
-    <issue>https://github.com/danielraban/cordova-diagnostic-plugin/issues</issue>
 
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
@@ -26,7 +24,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.js" name="Diagnostic">
-            <merges target="cordova.plugins.diagnostic" />
+            <merges target="cordova.plugins.diagnostic.hathway" />
         </js-module>
 
         <header-file src="src/ios/Diagnostic.h" />
@@ -41,7 +39,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.location.js" name="Diagnostic_Location">
-            <merges target="cordova.plugins.diagnostic.location" />
+            <merges target="cordova.plugins.diagnostic.hathway.location" />
         </js-module>
 
         <header-file src="src/ios/Diagnostic_Location.h" />
@@ -71,7 +69,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.bluetooth.js" name="Diagnostic_Bluetooth">
-            <merges target="cordova.plugins.diagnostic.bluetooth" />
+            <merges target="cordova.plugins.diagnostic.hathway.bluetooth" />
         </js-module>
 
         <header-file src="src/ios/Diagnostic_Bluetooth.h" />
@@ -97,7 +95,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.wifi.js" name="Diagnostic_Wifi">
-            <merges target="cordova.plugins.diagnostic.wifi" />
+            <merges target="cordova.plugins.diagnostic.hathway.wifi" />
         </js-module>
 
         <header-file src="src/ios/Diagnostic_Wifi.h" />
@@ -113,7 +111,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.camera.js" name="Diagnostic_Camera">
-            <merges target="cordova.plugins.diagnostic.camera" />
+            <merges target="cordova.plugins.diagnostic.hathway.camera" />
         </js-module>
 
         <framework src="Photos.framework" />
@@ -142,7 +140,7 @@
         <framework src="UserNotifications.framework" />
 
         <js-module src="www/ios/diagnostic.notifications.js" name="Diagnostic_Notifications">
-            <merges target="cordova.plugins.diagnostic.notifications" />
+            <merges target="cordova.plugins.diagnostic.hathway.notifications" />
         </js-module>
 
         <header-file src="src/ios/Diagnostic_Notifications.h" />
@@ -158,7 +156,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.microphone.js" name="Diagnostic_Microphone">
-            <merges target="cordova.plugins.diagnostic.microphone" />
+            <merges target="cordova.plugins.diagnostic.hathway.microphone" />
         </js-module>
 
         <framework src="AVFoundation.framework" />
@@ -180,7 +178,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.contacts.js" name="Diagnostic_Contacts">
-            <merges target="cordova.plugins.diagnostic.contacts" />
+            <merges target="cordova.plugins.diagnostic.hathway.contacts" />
         </js-module>
 
         <framework src="Contacts.framework" />
@@ -203,7 +201,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.calendar.js" name="Diagnostic_Calendar">
-            <merges target="cordova.plugins.diagnostic.calendar" />
+            <merges target="cordova.plugins.diagnostic.hathway.calendar" />
         </js-module>
 
         <framework src="EventKit.framework" />
@@ -225,7 +223,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.reminders.js" name="Diagnostic_Reminders">
-            <merges target="cordova.plugins.diagnostic.reminders" />
+            <merges target="cordova.plugins.diagnostic.hathway.reminders" />
         </js-module>
 
         <framework src="EventKit.framework" />
@@ -247,7 +245,7 @@
         </config-file>
 
         <js-module src="www/ios/diagnostic.motion.js" name="Diagnostic_Motion">
-            <merges target="cordova.plugins.diagnostic.motion" />
+            <merges target="cordova.plugins.diagnostic.hathway.motion" />
         </js-module>
 
         <framework src="CoreMotion.framework" />
@@ -264,13 +262,13 @@
     <platform name="android">
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic" >
-                <param name="android-package" value="cordova.plugins.Diagnostic"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic" src="www/android/diagnostic.js">
-            <merges target="cordova.plugins.diagnostic" />
+            <merges target="cordova.plugins.diagnostic.hathway" />
         </js-module>
 
         <source-file src="src/android/Diagnostic.java" target-dir="src/cordova/plugins" />
@@ -282,13 +280,13 @@
         <!--BEGIN_MODULE LOCATION-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Location" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_Location"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_Location"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic_Location" src="www/android/diagnostic.location.js">
-            <merges target="cordova.plugins.diagnostic.location" />
+            <merges target="cordova.plugins.diagnostic.hathway.location" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_Location.java" target-dir="src/cordova/plugins" />
@@ -297,7 +295,7 @@
         <!--BEGIN_MODULE BLUETOOTH-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Bluetooth" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_Bluetooth"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_Bluetooth"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
@@ -307,7 +305,7 @@
         </config-file>
 
         <js-module name="Diagnostic_Bluetooth" src="www/android/diagnostic.bluetooth.js">
-            <merges target="cordova.plugins.diagnostic.bluetooth" />
+            <merges target="cordova.plugins.diagnostic.hathway.bluetooth" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_Bluetooth.java" target-dir="src/cordova/plugins" />
@@ -316,13 +314,13 @@
         <!--BEGIN_MODULE WIFI-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Wifi" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_Wifi"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_Wifi"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic_Wifi" src="www/android/diagnostic.wifi.js">
-            <merges target="cordova.plugins.diagnostic.wifi" />
+            <merges target="cordova.plugins.diagnostic.hathway.wifi" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_Wifi.java" target-dir="src/cordova/plugins" />
@@ -331,13 +329,13 @@
         <!--BEGIN_MODULE CAMERA-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Camera" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_Camera"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_Camera"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic_Camera" src="www/android/diagnostic.camera.js">
-            <merges target="cordova.plugins.diagnostic.camera" />
+            <merges target="cordova.plugins.diagnostic.hathway.camera" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_Camera.java" target-dir="src/cordova/plugins" />
@@ -346,13 +344,13 @@
         <!--BEGIN_MODULE NOTIFICATIONS-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Notifications" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_Notifications"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_Notifications"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic_Notifications" src="www/android/diagnostic.notifications.js">
-            <merges target="cordova.plugins.diagnostic.notifications" />
+            <merges target="cordova.plugins.diagnostic.hathway.notifications" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_Notifications.java" target-dir="src/cordova/plugins" />
@@ -360,32 +358,32 @@
 
         <!--BEGIN_MODULE MICROPHONE-->
         <js-module name="Diagnostic_Microphone" src="www/android/diagnostic.microphone.js">
-            <merges target="cordova.plugins.diagnostic.microphone" />
+            <merges target="cordova.plugins.diagnostic.hathway.microphone" />
         </js-module>
         <!--END_MODULE MICROPHONE-->
 
         <!--BEGIN_MODULE CONTACTS-->
         <js-module name="Diagnostic_Contacts" src="www/android/diagnostic.contacts.js">
-            <merges target="cordova.plugins.diagnostic.contacts" />
+            <merges target="cordova.plugins.diagnostic.hathway.contacts" />
         </js-module>
         <!--END_MODULE CONTACTS-->
 
         <!--BEGIN_MODULE CALENDAR-->
         <js-module name="Diagnostic_Calendar" src="www/android/diagnostic.calendar.js">
-            <merges target="cordova.plugins.diagnostic.calendar" />
+            <merges target="cordova.plugins.diagnostic.hathway.calendar" />
         </js-module>
         <!--END_MODULE CALENDAR-->
 
         <!--BEGIN_MODULE NFC-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_NFC" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_NFC"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_NFC"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic_NFC" src="www/android/diagnostic.nfc.js">
-            <merges target="cordova.plugins.diagnostic.nfc" />
+            <merges target="cordova.plugins.diagnostic.hathway.nfc" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_NFC.java" target-dir="src/cordova/plugins" />
@@ -394,13 +392,13 @@
         <!--BEGIN_MODULE EXTERNAL_STORAGE-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_External_Storage" >
-                <param name="android-package" value="cordova.plugins.Diagnostic_External_Storage"/>
+                <param name="android-package" value="cordova.plugins.diagnostic.hathway_External_Storage"/>
                 <param name="onload" value="true" />
             </feature>
         </config-file>
 
         <js-module name="Diagnostic_External_Storage" src="www/android/diagnostic.external_storage.js">
-            <merges target="cordova.plugins.diagnostic.external_storage" />
+            <merges target="cordova.plugins.diagnostic.hathway.external_storage" />
         </js-module>
 
         <source-file src="src/android/Diagnostic_External_Storage.java" target-dir="src/cordova/plugins" />
@@ -410,12 +408,12 @@
     <platform name="windows">
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic" >
-                <param name="windows-package" value="cordova.plugins.Diagnostic"/>
+                <param name="windows-package" value="cordova.plugins.diagnostic.hathway"/>
             </feature>
         </config-file>
 
         <js-module src="www/windows/diagnostic.js" name="Diagnostic">
-            <merges target="cordova.plugins.diagnostic" />
+            <merges target="cordova.plugins.diagnostic.hathway" />
         </js-module>
 
         <js-module src="src/windows/diagnosticProxy.js" name="diagnosticProxy">
@@ -425,12 +423,12 @@
         <!--BEGIN_MODULE LOCATION-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Location" >
-                <param name="windows-package" value="cordova.plugins.Diagnostic_Location"/>
+                <param name="windows-package" value="cordova.plugins.diagnostic.hathway_Location"/>
             </feature>
         </config-file>
 
         <js-module src="www/windows/diagnostic.location.js" name="Diagnostic_Location">
-            <merges target="cordova.plugins.diagnostic.location" />
+            <merges target="cordova.plugins.diagnostic.hathway.location" />
         </js-module>
 
         <js-module src="src/windows/diagnosticProxy.location.js" name="diagnosticProxy.location">
@@ -441,12 +439,12 @@
         <!--BEGIN_MODULE BLUETOOTH-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Bluetooth" >
-                <param name="windows-package" value="cordova.plugins.Diagnostic_Bluetooth"/>
+                <param name="windows-package" value="cordova.plugins.diagnostic.hathway_Bluetooth"/>
             </feature>
         </config-file>
 
         <js-module src="www/windows/diagnostic.bluetooth.js" name="Diagnostic_Bluetooth">
-            <merges target="cordova.plugins.diagnostic.bluetooth" />
+            <merges target="cordova.plugins.diagnostic.hathway.bluetooth" />
         </js-module>
 
         <js-module src="src/windows/diagnosticProxy.bluetooth.js" name="diagnosticProxy.bluetooth">
@@ -457,12 +455,12 @@
         <!--BEGIN_MODULE WIFI-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Wifi" >
-                <param name="windows-package" value="cordova.plugins.Diagnostic_Wifi"/>
+                <param name="windows-package" value="cordova.plugins.diagnostic.hathway_Wifi"/>
             </feature>
         </config-file>
 
         <js-module src="www/windows/diagnostic.wifi.js" name="Diagnostic_Wifi">
-            <merges target="cordova.plugins.diagnostic.wifi" />
+            <merges target="cordova.plugins.diagnostic.hathway.wifi" />
         </js-module>
 
         <js-module src="src/windows/diagnosticProxy.wifi.js" name="diagnosticProxy.wifi">
@@ -473,12 +471,12 @@
         <!--BEGIN_MODULE CAMERA-->
         <config-file target="config.xml" parent="/*">
             <feature name="Diagnostic_Camera" >
-                <param name="windows-package" value="cordova.plugins.Diagnostic_Camera"/>
+                <param name="windows-package" value="cordova.plugins.diagnostic.hathway_Camera"/>
             </feature>
         </config-file>
 
         <js-module src="www/windows/diagnostic.camera.js" name="Diagnostic_Camera">
-            <merges target="cordova.plugins.diagnostic.camera" />
+            <merges target="cordova.plugins.diagnostic.hathway.camera" />
         </js-module>
 
         <js-module src="src/windows/diagnosticProxy.camera.js" name="diagnosticProxy.camera">

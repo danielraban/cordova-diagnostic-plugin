@@ -14,7 +14,7 @@ var Diagnostic_NFC = (function(){
      *********************/
     var Diagnostic_NFC = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -105,7 +105,7 @@ var Diagnostic_NFC = (function(){
      * Pass in a falsey value to de-register the currently registered function.
      *
      * @param {Function} successCallback -  The callback which will be called when the NFC state changes.
-     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.NFCState`.
+     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.NFCState`.
      */
     Diagnostic_NFC.registerNFCStateChangeHandler = function(successCallback) {
         Diagnostic_NFC._onNFCStateChange = successCallback || function(){};

@@ -33,8 +33,8 @@ Diagnostic.prototype.switchToMobileDataSettings = function () {
  *  This callback function is passed a single string parameter containing the error message.
  */
 Diagnostic.prototype.isLocationAvailable = function (successCallback, errorCallback) {
-    if(cordova.plugins.diagnostic.location){
-        cordova.plugins.diagnostic.location.isLocationAvailable.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.location){
+        cordova.plugins.diagnostic.hathway.location.isLocationAvailable.apply(this, arguments);
     }else{
         throw "Diagnostic Location module is not installed";
     }
@@ -44,8 +44,8 @@ Diagnostic.prototype.isLocationAvailable = function (successCallback, errorCallb
  * Switches to the Location page in the Settings app
  */
 Diagnostic.prototype.switchToLocationSettings = function () {
-    if(cordova.plugins.diagnostic.location){
-        cordova.plugins.diagnostic.location.switchToLocationSettings.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.location){
+        cordova.plugins.diagnostic.hathway.location.switchToLocationSettings.apply(this, arguments);
     }else{
         throw "Diagnostic Location module is not installed";
     }
@@ -64,8 +64,8 @@ Diagnostic.prototype.switchToLocationSettings = function () {
  * @param {Boolean} state - Bluetooth state to set: TRUE for enabled, FALSE for disabled.
  */
 Diagnostic.prototype.setBluetoothState = function (successCallback, errorCallback, state) {
-    if(cordova.plugins.diagnostic.bluetooth){
-        cordova.plugins.diagnostic.bluetooth.setBluetoothState.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.bluetooth){
+        cordova.plugins.diagnostic.hathway.bluetooth.setBluetoothState.apply(this, arguments);
     }else{
         throw "Diagnostic Bluetooth module is not installed";
     }
@@ -80,8 +80,8 @@ Diagnostic.prototype.setBluetoothState = function (successCallback, errorCallbac
  *  This callback function is passed a single string parameter containing the error message.
  */
 Diagnostic.prototype.isBluetoothAvailable = function (successCallback, errorCallback) {
-    if(cordova.plugins.diagnostic.bluetooth){
-        cordova.plugins.diagnostic.bluetooth.isBluetoothAvailable.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.bluetooth){
+        cordova.plugins.diagnostic.hathway.bluetooth.isBluetoothAvailable.apply(this, arguments);
     }else{
         throw "Diagnostic Bluetooth module is not installed";
     }
@@ -91,8 +91,8 @@ Diagnostic.prototype.isBluetoothAvailable = function (successCallback, errorCall
  * Switches to the Bluetooth page in the Settings app
  */
 Diagnostic.prototype.switchToBluetoothSettings = function () {
-    if(cordova.plugins.diagnostic.bluetooth){
-        cordova.plugins.diagnostic.bluetooth.switchToBluetoothSettings.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.bluetooth){
+        cordova.plugins.diagnostic.hathway.bluetooth.switchToBluetoothSettings.apply(this, arguments);
     }else{
         throw "Diagnostic Bluetooth module is not installed";
     }
@@ -105,8 +105,8 @@ Diagnostic.prototype.switchToBluetoothSettings = function () {
  * Switches to the WiFi page in the Settings app
  */
 Diagnostic.prototype.switchToWifiSettings = function () {
-    if(cordova.plugins.diagnostic.wifi){
-        cordova.plugins.diagnostic.wifi.switchToWifiSettings.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.wifi){
+        cordova.plugins.diagnostic.hathway.wifi.switchToWifiSettings.apply(this, arguments);
     }else{
         throw "Diagnostic Wifi module is not installed";
     }
@@ -121,8 +121,8 @@ Diagnostic.prototype.switchToWifiSettings = function () {
  * @param {Boolean} state - WiFi state to set: TRUE for enabled, FALSE for disabled.
  */
 Diagnostic.prototype.setWifiState = function (successCallback, errorCallback, state) {
-    if(cordova.plugins.diagnostic.wifi){
-        cordova.plugins.diagnostic.wifi.setWifiState.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.wifi){
+        cordova.plugins.diagnostic.hathway.wifi.setWifiState.apply(this, arguments);
     }else{
         throw "Diagnostic Wifi module is not installed";
     }
@@ -137,8 +137,8 @@ Diagnostic.prototype.setWifiState = function (successCallback, errorCallback, st
  *  This callback function is passed a single string parameter containing the error message.
  */
 Diagnostic.prototype.isWifiAvailable = Diagnostic.isWifiEnabled = function (successCallback, errorCallback) {
-    if(cordova.plugins.diagnostic.wifi){
-        cordova.plugins.diagnostic.wifi.isWifiAvailable.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.wifi){
+        cordova.plugins.diagnostic.hathway.wifi.isWifiAvailable.apply(this, arguments);
     }else{
         throw "Diagnostic Wifi module is not installed";
     }
@@ -158,8 +158,8 @@ Diagnostic.prototype.isWifiAvailable = Diagnostic.isWifiEnabled = function (succ
  *  This callback function is passed a single string parameter containing the error message.
  */
 Diagnostic.prototype.isCameraAvailable = function (params) {
-    if(cordova.plugins.diagnostic.camera){
-        cordova.plugins.diagnostic.camera.isCameraAvailable.apply(this, arguments);
+    if(cordova.plugins.diagnostic.hathway.camera){
+        cordova.plugins.diagnostic.hathway.camera.isCameraAvailable.apply(this, arguments);
     }else{
         throw "Diagnostic Camera module is not installed";
     }

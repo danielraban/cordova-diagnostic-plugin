@@ -238,7 +238,7 @@ static NSString*const LOG_TAG = @"Diagnostic_Location[native]";
     if(locationAccuracyAuthorizationChanged){
         [diagnostic logDebug:[NSString stringWithFormat:@"Location accuracy authorization changed to: %@", locationAccuracyAuthorization]];
 
-        [diagnostic executeGlobalJavascript:[NSString stringWithFormat:@"cordova.plugins.diagnostic.location._onLocationAccuracyAuthorizationChange(\"%@\");", locationAccuracyAuthorization]];
+        [diagnostic executeGlobalJavascript:[NSString stringWithFormat:@"cordova.plugins.diagnostic.hathway.location._onLocationAccuracyAuthorizationChange(\"%@\");", locationAccuracyAuthorization]];
     }
 }
 #endif
@@ -276,7 +276,7 @@ static NSString*const LOG_TAG = @"Diagnostic_Location[native]";
             self.locationRequestCallbackId = nil;
         }
 
-        [diagnostic executeGlobalJavascript:[NSString stringWithFormat:@"cordova.plugins.diagnostic.location._onLocationStateChange(\"%@\");", locationAuthorizationStatus]];
+        [diagnostic executeGlobalJavascript:[NSString stringWithFormat:@"cordova.plugins.diagnostic.hathway.location._onLocationStateChange(\"%@\");", locationAuthorizationStatus]];
     }
 }
 

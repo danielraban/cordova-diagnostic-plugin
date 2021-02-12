@@ -14,7 +14,7 @@ var Diagnostic_Microphone = (function(){
      *********************/
     var Diagnostic_Microphone = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -62,10 +62,10 @@ var Diagnostic_Microphone = (function(){
      * @param {Function} successCallback - The callback which will be called when operation is successful.
      * This callback function is passed a single string parameter which indicates the authorization status.
      * Possible values are:
-     * `cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED`
-     * `cordova.plugins.diagnostic.permissionStatus.DENIED_ONCE`
-     * `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
-     * `cordova.plugins.diagnostic.permissionStatus.GRANTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCE`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED`
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */

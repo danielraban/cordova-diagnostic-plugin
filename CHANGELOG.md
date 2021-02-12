@@ -131,7 +131,7 @@ Fixes [#272](https://github.com/danielraban/cordova-diagnostic-plugin/issues/272
     * Splits `requestAndCheckMotionAuthorization()` into `requestMotionAuthorization()` and `getMotionAuthorizationStatus()`.
         * `getMotionAuthorizationStatus()` returns the current authorization status only and does not request permission if it has not already been requested.
         * `requestMotionAuthorization()` should now only be called once when `motionStatus` is `NOT_REQUESTED`. Calling more than once will invoke the error callback. 
-    * Adds `cordova.plugins.diagnostic.motionStatus` constants to full describe authorization states.
+    * Adds `cordova.plugins.diagnostic.hathway.motionStatus` constants to full describe authorization states.
     * Deprecates `requestAndCheckMotionAuthorization()`. Calling this will invoke `requestMotionAuthorization()` but also generate a console warning.
 
 **v3.6.7**
@@ -247,7 +247,7 @@ Fix bug in mapping of legacy camera API function signatures for Android.
 
 **v3.1.0**
 
-**NOTE:** This version contains backwardly-incompatible renaming of some functions. Either fix the version of the plugin in your config.xml to `cordova.plugins.diagnostic@3.0` or update your code to use the revised names below.
+**NOTE:** This version contains backwardly-incompatible renaming of some functions. Either fix the version of the plugin in your config.xml to `cordova.plugins.diagnostic.hathway@3.0` or update your code to use the revised names below.
 
 - Revised function names to logically separate those which check if device OS setting is enabled (`isSomethingEnabled()`) vs those which check if hardware/sensor is available for use by the app (device OS setting is enabled AND app has authorisation AND hardware is present - `isSomethingAvailable()`).
     - Renamed `isLocationEnabled()` => `isLocationAvailable()` (Android, iOS and Windows 10 Mobile) - if location is available to app
@@ -284,7 +284,7 @@ Fix bug in mapping of legacy camera API function signatures for Android.
 
 In order to make cross-platform use of the shared plugin functions easier, some **backwardly-incompatible changes** have been made to existing API functions.
 
-To avoid breaking existing code which uses the old API syntax, you can continue to use the v2 API by specifying the plugin version when adding it: `cordova.plugins.diagnostic@2`
+To avoid breaking existing code which uses the old API syntax, you can continue to use the v2 API by specifying the plugin version when adding it: `cordova.plugins.diagnostic.hathway@2`
 
 v3 contains the following backwardly-incompatible changes:
 

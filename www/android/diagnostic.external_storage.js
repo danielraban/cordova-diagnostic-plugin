@@ -14,7 +14,7 @@ var Diagnostic_External_Storage = (function(){
      *********************/
     var Diagnostic_External_Storage = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -45,7 +45,7 @@ var Diagnostic_External_Storage = (function(){
      * Requests authorisation for runtime permission to use the external storage.
      * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will have no effect as the permission is already granted at installation time.
      * @param {Function} successCallback - function to call on successful request for runtime permission.
-     * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
      * @param {Function} errorCallback - function to call on failure to request authorisation.
      */
     Diagnostic_External_Storage.requestExternalStorageAuthorization = function(successCallback, errorCallback){
@@ -56,7 +56,7 @@ var Diagnostic_External_Storage = (function(){
      * Returns the authorisation status for runtime permission to use the external storage.
      * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will always return GRANTED status as permission is already granted at installation time.
      * @param {Function} successCallback - function to call on successful request for runtime permission status.
-     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
      * @param {Function} errorCallback - function to call on failure to request authorisation status.
      */
     Diagnostic_External_Storage.getExternalStorageAuthorizationStatus = function(successCallback, errorCallback){

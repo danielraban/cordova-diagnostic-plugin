@@ -1,4 +1,4 @@
-Cordova diagnostic plugin [![Latest Stable Version](https://img.shields.io/npm/v/cordova.plugins.diagnostic.svg)](https://www.npmjs.com/package/cordova.plugins.diagnostic) [![Total Downloads](https://img.shields.io/npm/dt/cordova.plugins.diagnostic.svg)](https://npm-stat.com/charts.html?package=cordova.plugins.diagnostic)
+Cordova diagnostic plugin [![Latest Stable Version](https://img.shields.io/npm/v/cordova.plugins.diagnostic.hathway.svg)](https://www.npmjs.com/package/cordova.plugins.diagnostic.hathway) [![Total Downloads](https://img.shields.io/npm/dt/cordova.plugins.diagnostic.hathway.svg)](https://npm-stat.com/charts.html?package=cordova.plugins.diagnostic.hathway)
 =========================
 
 <!-- doctoc README.md --maxlevel=3 -->
@@ -330,7 +330,7 @@ Cordova diagnostic plugin [![Latest Stable Version](https://img.shields.io/npm/v
 
 This Cordova/Phonegap plugin for iOS, Android and Windows 10 UWP is used to manage device settings such as Location,  Bluetooth and WiFi. It enables management of run-time permissions, device hardware and core OS features.
 
-The plugin is registered in on [npm](https://www.npmjs.com/package/cordova.plugins.diagnostic) as `cordova.plugins.diagnostic`
+The plugin is registered in on [npm](https://www.npmjs.com/package/cordova.plugins.diagnostic.hathway) as `cordova.plugins.diagnostic.hathway`
 
 <!-- DONATE -->
 [![donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG_global.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZRD3W47HQ3EMJ)
@@ -366,7 +366,7 @@ In order to avoid build problems with Android, please make sure you have the lat
 
 * Make sure you have a [supported version](#minimum-supported-versions) of the `cordova-android` platform installed.
     * You can check if the Android platform in your Cordova project is up-to-date using `cordova platform check android` and if it's not, update it using `cordova platform rm android && cordova platform add android@latest`. 
-    * Since `cordova.plugins.diagnostic@6` the recommended Cordova Android platform version is `cordova-android@9.0.0` (which includes AndroidX support).
+    * Since `cordova.plugins.diagnostic.hathway@6` the recommended Cordova Android platform version is `cordova-android@9.0.0` (which includes AndroidX support).
     * To use this plugin with `cordova-android@8`, install [cordova-plugin-androidx](https://github.com/danielraban/cordova-plugin-androidx) and [cordova-plugin-androidx-adapter](https://github.com/danielraban/cordova-plugin-androidx-adapter).    
 * Phonegap Build uses should use the latest available CLI version ([listed here](https://build.phonegap.com/current-support)) by specifying using the `phonegap-version` tag in your `config.xml`.
 
@@ -374,21 +374,21 @@ In order to avoid build problems with Android, please make sure you have the lat
 
 ## Using the Cordova/Phonegap/Ionic CLI
 
-    $ cordova plugin add cordova.plugins.diagnostic
-    $ cordova plugin add cordova.plugins.diagnostic --variable ANDROIDX_VERSION=1.0.0
-    $ phonegap plugin add cordova.plugins.diagnostic
-    $ ionic cordova plugin add cordova.plugins.diagnostic
+    $ cordova plugin add cordova.plugins.diagnostic.hathway
+    $ cordova plugin add cordova.plugins.diagnostic.hathway --variable ANDROIDX_VERSION=1.0.0
+    $ phonegap plugin add cordova.plugins.diagnostic.hathway
+    $ ionic cordova plugin add cordova.plugins.diagnostic.hathway
 
 ## AndroidX Library
-This plugin uses/depends on the [AndroidX (Jetpack) libraries](https://developer.android.com/jetpack/androidx) (these supersede the [Android Support Library](https://developer.android.com/topic/libraries/support-library/index.html) which is no longer used by this plugin since `cordova.plugins.diagnostic@6`).
+This plugin uses/depends on the [AndroidX (Jetpack) libraries](https://developer.android.com/jetpack/androidx) (these supersede the [Android Support Library](https://developer.android.com/topic/libraries/support-library/index.html) which is no longer used by this plugin since `cordova.plugins.diagnostic.hathway@6`).
 
 This plugin pins a default version of the library in [its `plugin.xml`](https://github.com/danielraban/cordova-diagnostic-plugin/blob/master/plugin.xml) however you can override this to specify a different version using the `ANDROIDX_VERSION` variable at plugin installation time, for example:
 
-    $ cordova plugin add cordova.plugins.diagnostic --variable ANDROIDX_VERSION=1.0.0
+    $ cordova plugin add cordova.plugins.diagnostic.hathway --variable ANDROIDX_VERSION=1.0.0
 
 
 ## Specifying modules
-Since `cordova.plugins.diagnostic@4` the plugin is split into optional functional modules. 
+Since `cordova.plugins.diagnostic.hathway@4` the plugin is split into optional functional modules. 
 The reason for this is so you can choose to install only those parts of the plugin you'll use and therefore not install redundant code/components/frameworks.
 
 By default, all the modules will be added to your project when you install the plugin.
@@ -398,15 +398,15 @@ Module names should be capitalised.
 
 The preference takes the form:
 
-    <preference name="cordova.plugins.diagnostic.modules" value="[list of modules]" />
+    <preference name="cordova.plugins.diagnostic.hathway.modules" value="[list of modules]" />
     
 For example, to explicitly include all optional modules:
 
-    <preference name="cordova.plugins.diagnostic.modules" value="LOCATION BLUETOOTH WIFI CAMERA NOTIFICATIONS MICROPHONE CONTACTS CALENDAR REMINDERS MOTION NFC EXTERNAL_STORAGE" />
+    <preference name="cordova.plugins.diagnostic.hathway.modules" value="LOCATION BLUETOOTH WIFI CAMERA NOTIFICATIONS MICROPHONE CONTACTS CALENDAR REMINDERS MOTION NFC EXTERNAL_STORAGE" />
     
 To install only the core module and no optional modules, leave the preference value blank:
 
-    <preference name="cordova.plugins.diagnostic.modules" value="" />
+    <preference name="cordova.plugins.diagnostic.hathway.modules" value="" />
     
 ### Available modules
 
@@ -479,7 +479,7 @@ Before [opening a feature request issue](https://github.com/danielraban/cordova-
 
 # Usage
 
-The core plugin module is exposed via the global `cordova.plugins.diagnostic` object and it aliases all functions and properties of the other optional modules.
+The core plugin module is exposed via the global `cordova.plugins.diagnostic.hathway` object and it aliases all functions and properties of the other optional modules.
 If a function is called on the core module for an optional module which is not installed, a JS error will be raised by the core module.
 
 ## Core module
@@ -500,7 +500,7 @@ On Android, this opens the "App Info" page in the Settings app.
 
 On iOS, this opens the app settings page in the Settings app.
 
-    cordova.plugins.diagnostic.switchToSettings(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.switchToSettings(successCallback, errorCallback);
 
 #### Parameters
 
@@ -510,7 +510,7 @@ On iOS, this opens the app settings page in the Settings app.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.switchToSettings(function(){
+    cordova.plugins.diagnostic.hathway.switchToSettings(function(){
         console.log("Successfully switched to Settings app");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -523,7 +523,7 @@ Platforms: Android
 Switches to the wireless settings page in the Settings app.
 Allows configuration of wireless controls such as Wi-Fi, Bluetooth and Mobile networks.
 
-    cordova.plugins.diagnostic.switchToWirelessSettings();
+    cordova.plugins.diagnostic.hathway.switchToWirelessSettings();
         
 ### switchToMobileDataSettings()
 
@@ -531,7 +531,7 @@ Platforms: Android and Windows 10 UWP
 
 Displays mobile settings to allow user to enable mobile data.
 
-    cordova.plugins.diagnostic.switchToMobileDataSettings();
+    cordova.plugins.diagnostic.hathway.switchToMobileDataSettings();
     
     
 ### permissionStatus constants
@@ -540,7 +540,7 @@ Platforms: Android and iOS
 
 Both Android and iOS define constants for requesting and reporting the various permission states.
 
-    cordova.plugins.diagnostic.permissionStatus
+    cordova.plugins.diagnostic.hathway.permissionStatus
 
 #### Android
 
@@ -591,7 +591,7 @@ Indicates the user has granted access to the permission "when in use" (only when
 
 #### Example
 
-    if(somePermissionStatus === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    if(somePermissionStatus === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
         // Do something
     }
 
@@ -613,24 +613,24 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getPermissionAuthorizationStatus(function(status){
+    cordova.plugins.diagnostic.hathway.getPermissionAuthorizationStatus(function(status){
         switch(status){
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                 console.log("Permission granted to use the camera");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                 console.log("Permission to use the camera has not been requested yet");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ONCE:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCE:
                 console.log("Permission denied to use the camera - ask again?");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                 console.log("Permission permanently denied to use the camera - guess we won't be using it then!");
                 break;
         }
     }, function(error){
         console.error("The following error occurred: "+error);
-    }, cordova.plugins.diagnostic.permission.CAMERA);
+    }, cordova.plugins.diagnostic.hathway.permission.CAMERA);
 
 ### getPermissionsAuthorizationStatus()
 
@@ -650,19 +650,19 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getPermissionsAuthorizationStatus(function(statuses){
+    cordova.plugins.diagnostic.hathway.getPermissionsAuthorizationStatus(function(statuses){
         for (var permission in statuses){
             switch(statuses[permission]){
-                case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                     console.log("Permission granted to use "+permission);
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                     console.log("Permission to use "+permission+" has not been requested yet");
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.DENIED_ONCE:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCE:
                     console.log("Permission denied to use "+permission+" - ask again?");
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                     console.log("Permission permanently denied to use "+permission+" - guess we won't be using it then!");
                     break;
             }
@@ -670,8 +670,8 @@ The function is passed a single string parameter containing the error message.
     }, function(error){
         console.error("The following error occurred: "+error);
     },[
-        cordova.plugins.diagnostic.permission.ACCESS_FINE_LOCATION,
-        cordova.plugins.diagnostic.permission.ACCESS_COARSE_LOCATION
+        cordova.plugins.diagnostic.hathway.permission.ACCESS_FINE_LOCATION,
+        cordova.plugins.diagnostic.hathway.permission.ACCESS_COARSE_LOCATION
     ]);
 
 ### requestRuntimePermission()
@@ -692,24 +692,24 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestRuntimePermission(function(status){
+    cordova.plugins.diagnostic.hathway.requestRuntimePermission(function(status){
         switch(status){
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                 console.log("Permission granted to use the camera");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                 console.log("Permission to use the camera has not been requested yet");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ONCe:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCe:
                 console.log("Permission denied to use the camera - ask again?");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                 console.log("Permission permanently denied to use the camera - guess we won't be using it then!");
                 break;
         }
     }, function(error){
         console.error("The following error occurred: "+error);
-    }, cordova.plugins.diagnostic.permission.CAMERA);
+    }, cordova.plugins.diagnostic.hathway.permission.CAMERA);
 
 ### requestRuntimePermissions()
 
@@ -729,19 +729,19 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestRuntimePermissions(function(statuses){
+    cordova.plugins.diagnostic.hathway.requestRuntimePermissions(function(statuses){
         for (var permission in statuses){
             switch(statuses[permission]){
-                case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                     console.log("Permission granted to use "+permission);
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                     console.log("Permission to use "+permission+" has not been requested yet");
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.DENIED_ONCE:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCE:
                     console.log("Permission denied to use "+permission+" - ask again?");
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                     console.log("Permission permanently denied to use "+permission+" - guess we won't be using it then!");
                     break;
             }
@@ -749,8 +749,8 @@ The function is passed a single string parameter containing the error message.
     }, function(error){
         console.error("The following error occurred: "+error);
     },[
-        cordova.plugins.diagnostic.permission.ACCESS_FINE_LOCATION,
-        cordova.plugins.diagnostic.permission.ACCESS_COARSE_LOCATION
+        cordova.plugins.diagnostic.hathway.permission.ACCESS_FINE_LOCATION,
+        cordova.plugins.diagnostic.hathway.permission.ACCESS_COARSE_LOCATION
     ]);
 
 ### isRequestingPermission()
@@ -762,16 +762,16 @@ Note that only one request can be made concurrently because the native API canno
 so the plugin will invoke the error callback if attempting to make more than one simultaneous request.
 Multiple permission requests should be grouped into a single call since the native API is setup to handle batch requests of multiple permission groups.
 
-    var isRequesting = cordova.plugins.diagnostic.isRequestingPermission();
+    var isRequesting = cordova.plugins.diagnostic.hathway.isRequestingPermission();
 
 #### Example usage
 
-    var isRequesting = cordova.plugins.diagnostic.isRequestingPermission();
+    var isRequesting = cordova.plugins.diagnostic.hathway.isRequestingPermission();
     if(!isRequesting){
         requestSomePermissions();
     }else{
-        cordova.plugins.diagnostic.registerPermissionRequestCompleteHandler(function(statuses){
-            cordova.plugins.diagnostic.registerPermissionRequestCompleteHandler(null); // de-register handler after single call
+        cordova.plugins.diagnostic.hathway.registerPermissionRequestCompleteHandler(function(statuses){
+            cordova.plugins.diagnostic.hathway.registerPermissionRequestCompleteHandler(null); // de-register handler after single call
             requestSomePermissions();
         });
     }
@@ -783,12 +783,12 @@ Platforms: Android
 Registers a function to be called when a runtime permission request has completed.
 Pass in a falsey value to de-register the currently registered function.
 
-    cordova.plugins.diagnostic.registerPermissionRequestCompleteHandler(successCallback);
+    cordova.plugins.diagnostic.hathway.registerPermissionRequestCompleteHandler(successCallback);
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when a runtime permission request has completed.
-The function is passed a single object parameter which defines a key/value map, where the key is the permission requested (defined as a value in cordova.plugins.diagnostic.permission) and the value is the resulting authorisation status of that permission as a value in cordova.plugins.diagnostic.permissionStatus.
+The function is passed a single object parameter which defines a key/value map, where the key is the permission requested (defined as a value in cordova.plugins.diagnostic.hathway.permission) and the value is the resulting authorisation status of that permission as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
 
 #### Example usage
 
@@ -796,23 +796,23 @@ The function is passed a single object parameter which defines a key/value map, 
         console.info("Permission request complete");
         for (var permission in statuses){
             switch(statuses[permission]){
-                case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                     console.log("Permission granted to use "+permission);
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                     console.log("Permission to use "+permission+" has not been requested yet");
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.DENIED_ONCE:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCE:
                     console.log("Permission denied to use "+permission);
                     break;
-                case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+                case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                     console.log("Permission permanently denied to use "+permission);
                     break;
             }
         }
-        cordova.plugins.diagnostic.registerPermissionRequestCompleteHandler(null); // de-register handler
+        cordova.plugins.diagnostic.hathway.registerPermissionRequestCompleteHandler(null); // de-register handler
     }
-    cordova.plugins.diagnostic.registerPermissionRequestCompleteHandler(onPermissionRequestComplete);
+    cordova.plugins.diagnostic.hathway.registerPermissionRequestCompleteHandler(onPermissionRequestComplete);
 
 ### isDataRoamingEnabled()
 
@@ -821,7 +821,7 @@ Platforms: Android
 Checks if the device data roaming setting is enabled.
 Returns true if data roaming is enabled.
 
-    cordova.plugins.diagnostic.isDataRoamingEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isDataRoamingEnabled(successCallback, errorCallback);
 
 #### Parameters
 
@@ -833,7 +833,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isDataRoamingEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isDataRoamingEnabled(function(enabled){
         console.log("Data roaming is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -847,7 +847,7 @@ Platforms: Android
 Checks if the device setting for ADB(debug) is switched on.
 Returns true if ADB(debug) setting is switched on.
 
-    cordova.plugins.diagnostic.isADBModeEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isADBModeEnabled(successCallback, errorCallback);
 
 #### Parameters
 
@@ -859,7 +859,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isADBModeEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isADBModeEnabled(function(enabled){
         console.log("ADB mode(debug mode) is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -872,7 +872,7 @@ Platforms: Android
 Checks if the device is rooted.
 Returns true if the device is rooted.
 
-    cordova.plugins.diagnostic.isDeviceRooted(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isDeviceRooted(successCallback, errorCallback);
 
 #### Parameters
 
@@ -884,7 +884,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isDeviceRooted(function(rooted){
+    cordova.plugins.diagnostic.hathway.isDeviceRooted(function(rooted){
         console.log("device is " + (rooted ? "rooted" : "not rooted"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -897,7 +897,7 @@ Platforms: iOS
 
 Checks if the application is authorized for background refresh.
 
-    cordova.plugins.diagnostic.isBackgroundRefreshAuthorized(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isBackgroundRefreshAuthorized(successCallback, errorCallback);
 
 #### Parameters
 
@@ -909,7 +909,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isBackgroundRefreshAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isBackgroundRefreshAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "not authorized") + " to perform background refresh");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -921,7 +921,7 @@ Platforms: iOS
 
 Returns the background refresh authorization status for the application.
 
-    cordova.plugins.diagnostic.getBackgroundRefreshStatus(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getBackgroundRefreshStatus(successCallback, errorCallback);
 
 #### Parameters
 
@@ -932,8 +932,8 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getBackgroundRefreshStatus(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getBackgroundRefreshStatus(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("Background refresh is allowed");
         }
     }, function(error){
@@ -946,7 +946,7 @@ Platforms: Android and iOS
 
 Defines constants for the various CPU architectures of the current hardware returned by [getArchitecture()](#getarchitecture).
 
-        cordova.plugins.diagnostic.cpuArchitecture
+        cordova.plugins.diagnostic.hathway.cpuArchitecture
 
 #### Android
 
@@ -979,7 +979,7 @@ Platforms: Android and iOS
 
 Returns the CPU architecture of the current device.
 
-    cordova.plugins.diagnostic.getArchitecture(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getArchitecture(successCallback, errorCallback);
     
 #### Parameters
 
@@ -990,9 +990,9 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getArchitecture(function(arch){
-        if(arch === cordova.plugins.diagnostic.cpuArchitecture.X86
-        || arch === cordova.plugins.diagnostic.cpuArchitecture.X86_64){
+    cordova.plugins.diagnostic.hathway.getArchitecture(function(arch){
+        if(arch === cordova.plugins.diagnostic.hathway.cpuArchitecture.X86
+        || arch === cordova.plugins.diagnostic.hathway.cpuArchitecture.X86_64){
             console.log("Intel inside");
         }
     }, function(error){
@@ -1012,7 +1012,7 @@ This is useful if you want to fully reset the native application state but will 
 
 Note: There is no `successCallback()` since if the operation is successful, the application will restart immediately before any success callback can be applied.
 
-    cordova.plugins.diagnostic.restart(errorCallback, cold);
+    cordova.plugins.diagnostic.hathway.restart(errorCallback, cold);
 
 #### Parameters
 
@@ -1028,10 +1028,10 @@ The function is passed a single string parameter containing the error message.
     }
     
     // Warm restart
-    cordova.plugins.diagnostic.restart(onError, false);
+    cordova.plugins.diagnostic.hathway.restart(onError, false);
         
     // Cold restart
-    cordova.plugins.diagnostic.restart(onError, true);
+    cordova.plugins.diagnostic.hathway.restart(onError, true);
     
 
 ### enableDebug()
@@ -1044,7 +1044,7 @@ Enables debug mode, which logs native debug messages to the native and JS consol
 - Debug mode is initially disabled on plugin initialisation.
 
 
-    cordova.plugins.diagnostic.enableDebug(successCallback);
+    cordova.plugins.diagnostic.hathway.enableDebug(successCallback);
     
 #### Parameters
 
@@ -1052,7 +1052,7 @@ Enables debug mode, which logs native debug messages to the native and JS consol
 
 #### Example usage
 
-    cordova.plugins.diagnostic.enableDebug(function(){
+    cordova.plugins.diagnostic.hathway.enableDebug(function(){
         console.log("Debug is enabled"));
     });
     
@@ -1072,7 +1072,7 @@ Platforms: Android
 
 Defines constants for the various location modes on Android.
 
-    cordova.plugins.diagnostic.locationMode
+    cordova.plugins.diagnostic.hathway.locationMode
 
 #### Values
 
@@ -1083,18 +1083,18 @@ Defines constants for the various location modes on Android.
 
 #### Example
 
-    cordova.plugins.diagnostic.getLocationMode(function(locationMode){
+    cordova.plugins.diagnostic.hathway.getLocationMode(function(locationMode){
         switch(locationMode){
-            case cordova.plugins.diagnostic.locationMode.HIGH_ACCURACY:
+            case cordova.plugins.diagnostic.hathway.locationMode.HIGH_ACCURACY:
                 console.log("High accuracy");
                 break;
-            case cordova.plugins.diagnostic.locationMode.BATTERY_SAVING:
+            case cordova.plugins.diagnostic.hathway.locationMode.BATTERY_SAVING:
                 console.log("Battery saving");
                 break;
-            case cordova.plugins.diagnostic.locationMode.DEVICE_ONLY:
+            case cordova.plugins.diagnostic.hathway.locationMode.DEVICE_ONLY:
                 console.log("Device only");
                 break;
-            case cordova.plugins.diagnostic.locationMode.LOCATION_OFF:
+            case cordova.plugins.diagnostic.hathway.locationMode.LOCATION_OFF:
                 console.log("Location off");
                 break;
         }
@@ -1108,7 +1108,7 @@ Platforms: Android & iOS
 
 Defines constants for the various location authorization modes on iOS and Android >= 10.
 
-    cordova.plugins.diagnostic.locationAuthorizationMode
+    cordova.plugins.diagnostic.hathway.locationAuthorizationMode
 
 #### Values
 
@@ -1117,11 +1117,11 @@ Defines constants for the various location authorization modes on iOS and Androi
 
 #### Example
 
-    cordova.plugins.diagnostic.requestLocationAuthorization(function(status){
+    cordova.plugins.diagnostic.hathway.requestLocationAuthorization(function(status){
         console.log(status);
     }, function(error){
         console.error(error);
-    }, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
+    }, cordova.plugins.diagnostic.hathway.locationAuthorizationMode.ALWAYS);
     
 ### locationAccuracyAuthorization constants
 
@@ -1131,7 +1131,7 @@ Platforms: iOS
 - See [CLAccuracyAuthorization](https://developer.apple.com/documentation/corelocation/claccuracyauthorization).
 
 
-    cordova.plugins.diagnostic.locationAccuracyAuthorization
+    cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization
 
 #### Values
 
@@ -1140,7 +1140,7 @@ Platforms: iOS
 
 #### Example
 
-    cordova.plugins.diagnostic.locationAccuracyAuthorization(function(accuracy){
+    cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization(function(accuracy){
         console.log(accuracy);
     }, function(error){
         console.error(error);
@@ -1153,7 +1153,7 @@ Platforms: Android, iOS and Windows 10 UWP
 
 Checks if app is able to access device location.
 
-    cordova.plugins.diagnostic.isLocationAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isLocationAvailable(successCallback, errorCallback);
 
 On iOS and Windows 10 UWP this returns true if both the device setting is enabled AND the application is authorized to use location.
 When location is enabled, the locations returned are by a mixture GPS hardware, network triangulation and Wifi network IDs.
@@ -1176,7 +1176,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isLocationAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isLocationAvailable(function(available){
         console.log("Location is " + (available ? "available" : "not available"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1190,7 +1190,7 @@ Returns true if the device setting for location is on.
 On Android this returns true if Location Mode is switched on.
 On iOS this returns true if Location Services is switched on.
 
-    cordova.plugins.diagnostic.isLocationEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isLocationEnabled(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1202,7 +1202,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isLocationEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isLocationEnabled(function(enabled){
         console.log("Location setting is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1215,7 +1215,7 @@ Platforms: Android
 Checks if high-accuracy locations are available to the app from GPS hardware.
 Returns true if Location mode is enabled and is set to "Device only" or "High accuracy" AND if the app is authorised to use location.
 
-    cordova.plugins.diagnostic.isGpsLocationAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isGpsLocationAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1227,7 +1227,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isGpsLocationAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isGpsLocationAvailable(function(available){
         console.log("GPS location is " + (available ? "available" : "not available"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1244,7 +1244,7 @@ Returns true if Location mode is enabled and is set to either:
 - High accuracy = GPS hardware, network triangulation and Wifi network IDs (high and low accuracy)
 
 
-    cordova.plugins.diagnostic.isGpsLocationEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isGpsLocationEnabled(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1256,7 +1256,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isGpsLocationEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isGpsLocationEnabled(function(enabled){
         console.log("GPS location is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1270,7 +1270,7 @@ Checks if low-accuracy locations are available to the app from network triangula
 Returns true if Location mode is enabled and is set to "Battery saving" or "High accuracy"
 AND if the app is authorised to use location.
 
-    cordova.plugins.diagnostic.isNetworkLocationAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isNetworkLocationAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1282,7 +1282,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isNetworkLocationAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isNetworkLocationAvailable(function(available){
         console.log("Network location is " + (available ? "available" : "not available"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1299,7 +1299,7 @@ Returns true if Location mode is enabled and is set to either:
 - High accuracy = GPS hardware, network triangulation and Wifi network IDs (high and low accuracy)
 
 
-    cordova.plugins.diagnostic.isNetworkLocationEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isNetworkLocationEnabled(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1311,7 +1311,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isNetworkLocationEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isNetworkLocationEnabled(function(enabled){
         console.log("Network location is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1324,31 +1324,31 @@ Platforms: Android
 
 Returns the current location mode setting for the device.
 
-    cordova.plugins.diagnostic.getLocationMode(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getLocationMode(successCallback, errorCallback);
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating the current location mode
-as a constant in `cordova.plugins.diagnostic.locationMode`.
+as a constant in `cordova.plugins.diagnostic.hathway.locationMode`.
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
 
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getLocationMode(function(locationMode){
+    cordova.plugins.diagnostic.hathway.getLocationMode(function(locationMode){
         switch(locationMode){
-            case cordova.plugins.diagnostic.locationMode.HIGH_ACCURACY:
+            case cordova.plugins.diagnostic.hathway.locationMode.HIGH_ACCURACY:
                 console.log("High accuracy");
                 break;
-            case cordova.plugins.diagnostic.locationMode.BATTERY_SAVING:
+            case cordova.plugins.diagnostic.hathway.locationMode.BATTERY_SAVING:
                 console.log("Battery saving");
                 break;
-            case cordova.plugins.diagnostic.locationMode.DEVICE_ONLY:
+            case cordova.plugins.diagnostic.hathway.locationMode.DEVICE_ONLY:
                 console.log("Device only");
                 break;
-            case cordova.plugins.diagnostic.locationMode.LOCATION_OFF:
+            case cordova.plugins.diagnostic.hathway.locationMode.LOCATION_OFF:
                 console.log("Location off");
                 break;
         }
@@ -1367,7 +1367,7 @@ Notes for Android:
 - This is intended for Android 6 / API 23 and above.
 Calling on Android 5.1 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
 
-    `cordova.plugins.diagnostic.isLocationAuthorized(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.isLocationAuthorized(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -1381,7 +1381,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isLocationAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isLocationAuthorized(function(authorized){
         console.log("Location is " + (authorized ? "authorized" : "unauthorized"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1395,7 +1395,7 @@ Platforms: Android and iOS
 
  Note for Android: this is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
 
-    cordova.plugins.diagnostic.getLocationAuthorizationStatus(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getLocationAuthorizationStatus(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1406,18 +1406,18 @@ The function is passed a single string parameter containing the error message.
 
 #### Example iOS usage
 
-    cordova.plugins.diagnostic.getLocationAuthorizationStatus(function(status){
+    cordova.plugins.diagnostic.hathway.getLocationAuthorizationStatus(function(status){
        switch(status){
-           case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+           case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                console.log("Permission not requested");
                break;
-           case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+           case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                console.log("Permission denied");
                break;
-           case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+           case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                console.log("Permission granted always");
                break;
-           case cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE:
+           case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED_WHEN_IN_USE:
                console.log("Permission granted only when in use");
                break;
        }
@@ -1427,21 +1427,21 @@ The function is passed a single string parameter containing the error message.
 
 #### Example Android usage
 
-    cordova.plugins.diagnostic.getLocationAuthorizationStatus(function(status){
+    cordova.plugins.diagnostic.hathway.getLocationAuthorizationStatus(function(status){
         switch(status){
-            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                 console.log("Permission not requested");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ONCE:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ONCE:
                 console.log("Permission denied");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                 console.log("Permission permanently denied");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                console.log("Permission granted always");
                break;    
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED_WHEN_IN_USE:
                console.log("Permission granted only when in use (Android >= 10)");
                break; 
            
@@ -1467,10 +1467,10 @@ this plugin provides default messages, but you should override them with your sp
 
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will have no effect as the permissions are already granted at installation time.
 - The successCallback is invoked in response to the user's choice in the permission dialog and is passed the resulting authorization status.
-- When the plugin is running in an app built with the Android 10 / API 29 or above (and running on similar device) you can request background location permission by specifying the `mode` argument as `cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS`. 
+- When the plugin is running in an app built with the Android 10 / API 29 or above (and running on similar device) you can request background location permission by specifying the `mode` argument as `cordova.plugins.diagnostic.hathway.locationAuthorizationMode.ALWAYS`. 
     - If the build SDK/device version is <= Android 9 / API 28, granting location permission implicitly grants background location permission.  
 
-    `cordova.plugins.diagnostic.requestLocationAuthorization(successCallback, errorCallback, mode);`
+    `cordova.plugins.diagnostic.hathway.requestLocationAuthorization(successCallback, errorCallback, mode);`
 
 #### Parameters
 
@@ -1483,24 +1483,24 @@ If not specified, defaults to `WHEN_IN_USE`.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestLocationAuthorization(function(status){
+    cordova.plugins.diagnostic.hathway.requestLocationAuthorization(function(status){
         switch(status){
-            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                 console.log("Permission not requested");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                 console.log("Permission denied");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                 console.log("Permission granted always");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED_WHEN_IN_USE:
                 console.log("Permission granted only when in use");
                 break;
         }
     }, function(error){
         console.error(error);
-    }, cordova.plugins.diagnostic.locationAuthorizationMode.ALWAYS);
+    }, cordova.plugins.diagnostic.hathway.locationAuthorizationMode.ALWAYS);
 
 ### registerLocationStateChangeHandler()
 
@@ -1518,20 +1518,20 @@ This can be triggered either by the user's response to a location permission aut
 by the user turning on/off Location Services,
 or by the user changing the Location authorization state specifically for your app.
 
-    cordova.plugins.diagnostic.registerLocationStateChangeHandler(successCallback);
+    cordova.plugins.diagnostic.hathway.registerLocationStateChangeHandler(successCallback);
 
 #### Parameters
 
 - {Function} successCallback - function call when a change in location state occurs.
-On Android, the function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.locationMode`.
-On iOS, the function is passed a single string parameter indicating the new location authorisation status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+On Android, the function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.locationMode`.
+On iOS, the function is passed a single string parameter indicating the new location authorisation status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.registerLocationStateChangeHandler(function(state){
-        if((device.platform === "Android" && state !== cordova.plugins.diagnostic.locationMode.LOCATION_OFF)
-            || (device.platform === "iOS") && ( state === cordova.plugins.diagnostic.permissionStatus.GRANTED
-                || state === cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE
+    cordova.plugins.diagnostic.hathway.registerLocationStateChangeHandler(function(state){
+        if((device.platform === "Android" && state !== cordova.plugins.diagnostic.hathway.locationMode.LOCATION_OFF)
+            || (device.platform === "iOS") && ( state === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED
+                || state === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED_WHEN_IN_USE
         )){
             console.log("Location is available");
         }
@@ -1544,7 +1544,7 @@ Platforms: iOS
 Returns the location accuracy authorization for the application on iOS 14+.
 Note: calling on iOS <14 will result in the `errorCallback` being invoked.
 
-    cordova.plugins.diagnostic.getLocationAccuracyAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getLocationAccuracyAuthorization(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1555,12 +1555,12 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getLocationAccuracyAuthorization(function(accuracy){
+    cordova.plugins.diagnostic.hathway.getLocationAccuracyAuthorization(function(accuracy){
        switch(status){
-           case cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL:
+           case cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.FULL:
                console.log("Full location accuracy is authorized");
                break;
-           case cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL:
+           case cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.FULL:
                console.log("Reduced location accuracy is authorized");
                break;
        }
@@ -1596,7 +1596,7 @@ You'll need to add this entry using a `<config-file>` block in your `config.xml`
 - See [requestTemporaryFullAccuracyAuthorizationWithPurposeKey](https://developer.apple.com/documentation/corelocation/cllocationmanager/3600217-requesttemporaryfullaccuracyauth?language=objc).
  
 
-    `cordova.plugins.diagnostic.requestTemporaryFullAccuracyAuthorization(purpose, successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.requestTemporaryFullAccuracyAuthorization(purpose, successCallback, errorCallback);`
 
 #### Parameters
 
@@ -1610,12 +1610,12 @@ This callback function is passed a single string parameter containing the error 
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestTemporaryFullAccuracyAuthorization("navigation", function(accuracyAuthorization){
+    cordova.plugins.diagnostic.hathway.requestTemporaryFullAccuracyAuthorization("navigation", function(accuracyAuthorization){
         switch(accuracyAuthorization){
-            case cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL:
+            case cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.FULL:
                 console.log("Full accuracy authorized");
                 break;
-            case cordova.plugins.diagnostic.locationAccuracyAuthorization.REDUCED:
+            case cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.REDUCED:
                 console.log("Full accuracy denied");
                 break;
         }
@@ -1636,7 +1636,7 @@ Registers a function to be called when a change in location accuracy authorizati
  * Pass in a falsey value to de-register the currently registered function.
 
 
-    cordova.plugins.diagnostic.registerLocationAccuracyAuthorizationChangeHandler(successCallback);
+    cordova.plugins.diagnostic.hathway.registerLocationAccuracyAuthorizationChangeHandler(successCallback);
 
 #### Parameters
 
@@ -1645,12 +1645,12 @@ The function is passed a single string parameter indicating the new location acc
 
 #### Example usage
 
-    cordova.plugins.diagnostic.registerLocationAccuracyAuthorizationChangeHandler(function(accuracyAuthorization){
+    cordova.plugins.diagnostic.hathway.registerLocationAccuracyAuthorizationChangeHandler(function(accuracyAuthorization){
         switch(accuracyAuthorization){
-            case cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL:
+            case cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.FULL:
                 console.log("Accuracy authorization changed to full");
                 break;
-            case cordova.plugins.diagnostic.locationAccuracyAuthorization.REDUCED:
+            case cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.REDUCED:
                 console.log("Accuracy authorization changed to reduced");
                 break;
         }
@@ -1662,7 +1662,7 @@ Platforms: Android and Windows 10 UWP
 
 Displays the device location settings to allow user to enable location services/change location mode.
 
-    cordova.plugins.diagnostic.switchToLocationSettings();
+    cordova.plugins.diagnostic.hathway.switchToLocationSettings();
 
 Note: On Android, you may want to consider using the [Request Location Accuracy Plugin for Android](https://github.com/danielraban/cordova-plugin-request-location-accuracy) to request the desired location accuracy without needing the user to manually do this on the Location Settings page.
 
@@ -1680,7 +1680,7 @@ Platforms: Android and iOS
 
 Defines constants for the various Bluetooth hardware states
 
-        cordova.plugins.diagnostic.bluetoothState
+        cordova.plugins.diagnostic.hathway.bluetoothState
 
 #### Android
 
@@ -1700,8 +1700,8 @@ Defines constants for the various Bluetooth hardware states
 
 #### Example
 
-    cordova.plugins.diagnostic.getBluetoothState(function(state){
-        if(state === cordova.plugins.diagnostic.bluetoothState.POWERED_ON){
+    cordova.plugins.diagnostic.hathway.getBluetoothState(function(state){
+        if(state === cordova.plugins.diagnostic.hathway.bluetoothState.POWERED_ON){
             // Do something with Bluetooth
         }
     }, function(error){
@@ -1720,7 +1720,7 @@ Returns true if the device has Bluetooth capabilities AND if Bluetooth setting i
 On Android this requires permission `<uses-permission android:name="android.permission.BLUETOOTH" />`
 Calling on iOS 13+ will request runtime permission to access Bluetooth (if not already requested).
 
-    cordova.plugins.diagnostic.isBluetoothAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isBluetoothAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1732,7 +1732,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isBluetoothAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isBluetoothAvailable(function(available){
         console.log("Bluetooth is " + (available ? "available" : "not available"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1751,7 +1751,7 @@ Checks if the device setting for Bluetooth is switched on.
 On Android this requires permission `<uses-permission android:name="android.permission.BLUETOOTH" />`
 Calling on iOS 13+ will request runtime permission to access Bluetooth (if not already requested).
 
-    cordova.plugins.diagnostic.isBluetoothAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isBluetoothAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1763,7 +1763,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isBluetoothEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isBluetoothEnabled(function(enabled){
         console.log("Bluetooth is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1776,7 +1776,7 @@ Platforms: Android
 Checks if the device has Bluetooth capabilities.
 See http://developer.android.com/guide/topics/connectivity/bluetooth.html.
 
-    cordova.plugins.diagnostic.hasBluetoothSupport(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.hasBluetoothSupport(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1787,7 +1787,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.hasBluetoothSupport(function(supported){
+    cordova.plugins.diagnostic.hathway.hasBluetoothSupport(function(supported){
         console.log("Bluetooth is " + (supported ? "supported" : "unsupported"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1800,7 +1800,7 @@ Platforms: Android
 Checks if the device has Bluetooth Low Energy (LE) capabilities.
 See http://developer.android.com/guide/topics/connectivity/bluetooth-le.html.
 
-    cordova.plugins.diagnostic.hasBluetoothLESupport(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.hasBluetoothLESupport(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1811,7 +1811,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.hasBluetoothLESupport(function(supported){
+    cordova.plugins.diagnostic.hathway.hasBluetoothLESupport(function(supported){
         console.log("Bluetooth LE is " + (supported ? "supported" : "unsupported"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1833,7 +1833,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.hasBluetoothLEPeripheralSupport(function(supported){
+    cordova.plugins.diagnostic.hathway.hasBluetoothLEPeripheralSupport(function(supported){
         console.log("Bluetooth LE Peripheral Mode is " + (supported ? "supported" : "unsupported"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1847,19 +1847,19 @@ Platforms: Android and iOS
 Returns the state of Bluetooth on the device.
 Calling on iOS 13+ will request runtime permission to access Bluetooth (if not already requested).
 
-    cordova.plugins.diagnostic.getBluetoothState(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getBluetoothState(successCallback, errorCallback);
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when operation is successful.
-The function is passed a single string parameter which indicates the Bluetooth state as a constant in [`cordova.plugins.diagnostic.bluetoothState`](#bluetoothstate-constants).
+The function is passed a single string parameter which indicates the Bluetooth state as a constant in [`cordova.plugins.diagnostic.hathway.bluetoothState`](#bluetoothstate-constants).
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getBluetoothState(function(state){
-       if(state === cordova.plugins.diagnostic.bluetoothState.POWERED_ON){
+    cordova.plugins.diagnostic.hathway.getBluetoothState(function(state){
+       if(state === cordova.plugins.diagnostic.hathway.bluetoothState.POWERED_ON){
            console.log("Bluetooth is able to connect");
        }
     }, function(error){
@@ -1872,7 +1872,7 @@ Platforms: Android and Windows 10 UWP
 
 Enables/disables Bluetooth on the device.
 
-    cordova.plugins.diagnostic.setBluetoothState(successCallback, errorCallback, state);
+    cordova.plugins.diagnostic.hathway.setBluetoothState(successCallback, errorCallback, state);
 
 Requires the following permissions on Android:
 
@@ -1892,7 +1892,7 @@ Requires the following capabilities for Windows 10 UWP:
 
 #### Example usage
 
-    cordova.plugins.diagnostic.setBluetoothState(function(){
+    cordova.plugins.diagnostic.hathway.setBluetoothState(function(){
         console.log("Bluetooth was enabled");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -1909,7 +1909,7 @@ Requests Bluetooth authorization for the application.
 - When calling this function, the message contained in the `NSBluetoothPeripheralUsageDescription` .plist key is displayed to the user;
 this plugin provides a default message, but you should override this with your specific reason for requesting access - see the [iOS usage description messages](#ios-usage-description-messages) section for how to customise it.
 
-    cordova.plugins.diagnostic.requestBluetoothAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestBluetoothAuthorization(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1920,7 +1920,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestBluetoothAuthorization(function(){
+    cordova.plugins.diagnostic.hathway.requestBluetoothAuthorization(function(){
         console.log("Bluetooth authorization was requested."));
     }, function(error){
         console.error(error);
@@ -1937,17 +1937,17 @@ This is triggered when Bluetooth state changes so is useful for detecting change
 
 Calling on iOS 13+ will request runtime permission to access Bluetooth (if not already requested).
 
-    cordova.plugins.diagnostic.registerBluetoothStateChangeHandler(successCallback);
+    cordova.plugins.diagnostic.hathway.registerBluetoothStateChangeHandler(successCallback);
 
 #### Parameters
 
 - {Function} successCallback - function call when a change in Bluetooth state occurs.
-The function is passed a single string parameter which indicates the Bluetooth state as a constant in [`cordova.plugins.diagnostic.bluetoothState`](#bluetoothstate-constants).
+The function is passed a single string parameter which indicates the Bluetooth state as a constant in [`cordova.plugins.diagnostic.hathway.bluetoothState`](#bluetoothstate-constants).
 
 #### Example usage
 
-    cordova.plugins.diagnostic.registerBluetoothStateChangeHandler(function(state){
-       if(state === cordova.plugins.diagnostic.bluetoothState.POWERED_ON){
+    cordova.plugins.diagnostic.hathway.registerBluetoothStateChangeHandler(function(state){
+       if(state === cordova.plugins.diagnostic.hathway.bluetoothState.POWERED_ON){
            console.log("Bluetooth is able to connect");
        }
     });
@@ -1959,7 +1959,7 @@ Platforms: Android and Windows 10 UWP
 
 Displays Bluetooth settings to allow user to enable Bluetooth.
 
-    cordova.plugins.diagnostic.switchToBluetoothSettings();
+    cordova.plugins.diagnostic.hathway.switchToBluetoothSettings();
 
 ## WiFi module
 
@@ -1979,7 +1979,7 @@ On Android and Windows 10 UWP this returns true if the WiFi setting is set to en
 
 On Android this requires permission `<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />`
 
-    cordova.plugins.diagnostic.isWifiAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isWifiAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -1991,7 +1991,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isWifiAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isWifiAvailable(function(available){
         console.log("WiFi is " + (available ? "available" : "not available"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2005,7 +2005,7 @@ On iOS this returns true if the WiFi setting is set to enabled (regardless of wh
 On Android and Windows 10 UWP this returns true if the WiFi setting is set to enabled, and is the same as [`isWifiAvailable()`](#iswifiavailable)
 On Android this requires permission `<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />`
 
-    cordova.plugins.diagnostic.isWifiEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isWifiEnabled(successCallback, errorCallback);
 
 #### Parameters
 
@@ -2017,7 +2017,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isWifiEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isWifiEnabled(function(enabled){
         console.log("WiFi is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2029,7 +2029,7 @@ Platforms: Android and Windows 10 UWP
 
 Enables/disables WiFi on the device.
 
-    cordova.plugins.diagnostic.setWifiState(successCallback, errorCallback, state);
+    cordova.plugins.diagnostic.hathway.setWifiState(successCallback, errorCallback, state);
 
 Requires the following permissions for Android:
 
@@ -2049,7 +2049,7 @@ Requires the following capabilities for Windows 10 UWP:
 
 #### Example usage
 
-    cordova.plugins.diagnostic.setWifiState(function(){
+    cordova.plugins.diagnostic.hathway.setWifiState(function(){
         console.log("Wifi was enabled");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2062,7 +2062,7 @@ Platforms: Android and Windows 10 UWP
 
 Displays WiFi settings to allow user to enable WiFi.
 
-    cordova.plugins.diagnostic.switchToWifiSettings();
+    cordova.plugins.diagnostic.hathway.switchToWifiSettings();
 
 ## Camera module
 
@@ -2078,7 +2078,7 @@ Platforms: Android and iOS
 
 Checks if camera hardware is present on device.
 
-    cordova.plugins.diagnostic.isCameraPresent(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isCameraPresent(successCallback, errorCallback);
 
 #### Parameters
 
@@ -2090,7 +2090,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isCameraPresent(function(present){
+    cordova.plugins.diagnostic.hathway.isCameraPresent(function(present){
         console.log("Camera is " + (present ? "present" : "absent"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2108,12 +2108,12 @@ Notes:
 
 Notes for Android:
 - On Android by default this checks run-time permission for both `READ_EXTERNAL_STORAGE` and `CAMERA` because [cordova-plugin-camera@2.2+](https://github.com/apache/cordova-plugin-camera) requires both of these permissions.
-- The call signature `cordova.plugins.diagnostic.isCameraAvailable(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
+- The call signature `cordova.plugins.diagnostic.hathway.isCameraAvailable(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
 
 
-    cordova.plugins.diagnostic.isCameraAvailable(params);
-    cordova.plugins.diagnostic.isCameraAvailable(successCallback, errorCallback, params)
-    cordova.plugins.diagnostic.isCameraAvailable(successCallback, errorCallback, externalStorage)
+    cordova.plugins.diagnostic.hathway.isCameraAvailable(params);
+    cordova.plugins.diagnostic.hathway.isCameraAvailable(successCallback, errorCallback, params)
+    cordova.plugins.diagnostic.hathway.isCameraAvailable(successCallback, errorCallback, externalStorage)
 
 #### Parameters
 - {Object} params - (optional) parameters:
@@ -2127,7 +2127,7 @@ Defaults to true.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isCameraAvailable({
+    cordova.plugins.diagnostic.hathway.isCameraAvailable({
         successCallback: function(available){
             console.log("Camera is " + (available ? "available" : "not available"));
         },
@@ -2137,7 +2137,7 @@ Defaults to true.
         externalStorage: false
     });
     
-    cordova.plugins.diagnostic.isCameraAvailable(
+    cordova.plugins.diagnostic.hathway.isCameraAvailable(
         function(available){
             console.log("Camera is " + (available ? "available" : "not available"));
         }, function(error){
@@ -2147,7 +2147,7 @@ Defaults to true.
         }
     );
     
-    cordova.plugins.diagnostic.isCameraAvailable(
+    cordova.plugins.diagnostic.hathway.isCameraAvailable(
         function(available){
             console.log("Camera is " + (available ? "available" : "not available"));
         }, function(error){
@@ -2164,12 +2164,12 @@ Checks if the application is authorized to use the camera.
 Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return TRUE as permissions are already granted at installation time.
 - By default this checks run-time permission for both `READ_EXTERNAL_STORAGE` and `CAMERA` because [cordova-plugin-camera@2.2+](https://github.com/apache/cordova-plugin-camera) requires both of these permissions.
-- The call signature `cordova.plugins.diagnostic.isCameraAuthorized(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
+- The call signature `cordova.plugins.diagnostic.hathway.isCameraAuthorized(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
 
 
-    cordova.plugins.diagnostic.isCameraAuthorized(params);
-    cordova.plugins.diagnostic.isCameraAuthorized(successCallback, errorCallback, params)
-    cordova.plugins.diagnostic.isCameraAuthorized(successCallback, errorCallback, externalStorage)
+    cordova.plugins.diagnostic.hathway.isCameraAuthorized(params);
+    cordova.plugins.diagnostic.hathway.isCameraAuthorized(successCallback, errorCallback, params)
+    cordova.plugins.diagnostic.hathway.isCameraAuthorized(successCallback, errorCallback, externalStorage)
 
 #### Parameters
 - {Object} params - (optional) parameters:
@@ -2182,7 +2182,7 @@ Defaults to true.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isCameraAuthorized({
+    cordova.plugins.diagnostic.hathway.isCameraAuthorized({
         successCallback: function(authorized){
             console.log("App is " + (authorized ? "authorized" : "denied") + " access to the camera");
         },
@@ -2192,7 +2192,7 @@ Defaults to true.
         externalStorage: false
     });
     
-    cordova.plugins.diagnostic.isCameraAuthorized(
+    cordova.plugins.diagnostic.hathway.isCameraAuthorized(
         function(authorized){
             console.log("App is " + (authorized ? "authorized" : "denied") + " access to the camera");
         }, function(error){
@@ -2202,7 +2202,7 @@ Defaults to true.
         }
     );
     
-    cordova.plugins.diagnostic.isCameraAuthorized(
+    cordova.plugins.diagnostic.hathway.isCameraAuthorized(
         function(authorized){
             console.log("App is " + (authorized ? "authorized" : "denied") + " access to the camera");
         }, function(error){
@@ -2219,12 +2219,12 @@ Returns the camera authorization status for the application.
 Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
 - By default this checks run-time permission for both `READ_EXTERNAL_STORAGE` and `CAMERA` because [cordova-plugin-camera@2.2+](https://github.com/apache/cordova-plugin-camera) requires both of these permissions.
-- The call signature `cordova.plugins.diagnostic.getCameraAuthorizationStatus(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
+- The call signature `cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
 
 
-    cordova.plugins.diagnostic.getCameraAuthorizationStatus(params);
-    cordova.plugins.diagnostic.getCameraAuthorizationStatus(successCallback, errorCallback, params)
-    cordova.plugins.diagnostic.getCameraAuthorizationStatus(successCallback, errorCallback, externalStorage)
+    cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus(params);
+    cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus(successCallback, errorCallback, params)
+    cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus(successCallback, errorCallback, externalStorage)
 
 #### Parameters
 - {Object} params - (optional) parameters:
@@ -2238,9 +2238,9 @@ Defaults to true.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getCameraAuthorizationStatus({
+    cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus({
         successCallback: function(status){
-            if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+            if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
                 console.log("Camera use is authorized");
             }
         },
@@ -2250,9 +2250,9 @@ Defaults to true.
         externalStorage: false
     });
     
-    cordova.plugins.diagnostic.getCameraAuthorizationStatus(
+    cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus(
         function(status){
-            if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+            if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
                 console.log("Camera use is authorized");
             }
         }, function(error){
@@ -2262,9 +2262,9 @@ Defaults to true.
         }
     );
     
-    cordova.plugins.diagnostic.getCameraAuthorizationStatus(
+    cordova.plugins.diagnostic.hathway.getCameraAuthorizationStatus(
         function(status){
-            if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+            if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
                 console.log("Camera use is authorized");
             }
         }, function(error){
@@ -2288,19 +2288,19 @@ Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will have no effect as the permissions are already granted at installation time.
 - By default this requests run-time permission for both `READ_EXTERNAL_STORAGE` and `CAMERA` because [cordova-plugin-camera@2.2+](https://github.com/apache/cordova-plugin-camera) requires both of these permissions.
 - Requested run-time permissions which must be added to `AndroidManifest.xml` - see [Android camera permissions](#android-camera-permissions).
-- The call signature `cordova.plugins.diagnostic.requestCameraAuthorization(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
+- The call signature `cordova.plugins.diagnostic.hathway.requestCameraAuthorization(successCallback, errorCallback, externalStorage)` is also supported for benefit of the [ionic-native Promise API wrapper](https://github.com/driftyco/ionic-native/blob/master/src/%40ionic-native/plugins/diagnostic/index.ts).
 
     
-    cordova.plugins.diagnostic.requestCameraAuthorization(params);
-    cordova.plugins.diagnostic.requestCameraAuthorization(successCallback, errorCallback, params)
-    cordova.plugins.diagnostic.requestCameraAuthorization(successCallback, errorCallback, externalStorage)
+    cordova.plugins.diagnostic.hathway.requestCameraAuthorization(params);
+    cordova.plugins.diagnostic.hathway.requestCameraAuthorization(successCallback, errorCallback, params)
+    cordova.plugins.diagnostic.hathway.requestCameraAuthorization(successCallback, errorCallback, externalStorage)
 
 #### Parameters
 
 - {Object} params - (optional) parameters:
     - {Function} successCallback -  The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating whether access to the camera was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
     - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
     - {Boolean} externalStorage - (Android only) If true, requests permission for `READ_EXTERNAL_STORAGE` in addition to `CAMERA` run-time permission.
@@ -2308,9 +2308,9 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestCameraAuthorization({
+    cordova.plugins.diagnostic.hathway.requestCameraAuthorization({
         successCallback: function(status){
-            console.log("Authorization request for camera use was " + (status == cordova.plugins.diagnostic.permissionStatus.GRANTED ? "granted" : "denied"));
+            console.log("Authorization request for camera use was " + (status == cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED ? "granted" : "denied"));
         },
         errorCallback: function(error){
             console.error(error);
@@ -2318,9 +2318,9 @@ The function is passed a single string parameter containing the error message.
         externalStorage: false
     });
     
-    cordova.plugins.diagnostic.requestCameraAuthorization(
+    cordova.plugins.diagnostic.hathway.requestCameraAuthorization(
         function(status){
-            console.log("Authorization request for camera use was " + (status == cordova.plugins.diagnostic.permissionStatus.GRANTED ? "granted" : "denied"));
+            console.log("Authorization request for camera use was " + (status == cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED ? "granted" : "denied"));
         }, function(error){
             console.error("The following error occurred: "+error);
         }, {
@@ -2328,9 +2328,9 @@ The function is passed a single string parameter containing the error message.
         }
     );
     
-    cordova.plugins.diagnostic.requestCameraAuthorization(
+    cordova.plugins.diagnostic.hathway.requestCameraAuthorization(
         function(status){
-            console.log("Authorization request for camera use was " + (status == cordova.plugins.diagnostic.permissionStatus.GRANTED ? "granted" : "denied"));
+            console.log("Authorization request for camera use was " + (status == cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED ? "granted" : "denied"));
         }, function(error){
             console.error("The following error occurred: "+error);
         }, false
@@ -2342,7 +2342,7 @@ Platforms: iOS
 
 Checks if the application is authorized to use the Camera Roll in Photos app.
 
-    cordova.plugins.diagnostic.isCameraRollAuthorized(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isCameraRollAuthorized(successCallback, errorCallback);
 
 #### Parameters
 
@@ -2354,7 +2354,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isCameraRollAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isCameraRollAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "denied") + " access to the camera roll");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2366,26 +2366,26 @@ Platforms: iOS
 
 Returns the authorization status for the application to use the Camera Roll in Photos app.
 
-    cordova.plugins.diagnostic.getCameraRollAuthorizationStatus(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getCameraRollAuthorizationStatus(successCallback, errorCallback);
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when operation is successful.
-The function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+The function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getCameraRollAuthorizationStatus(function(status){
+    cordova.plugins.diagnostic.hathway.getCameraRollAuthorizationStatus(function(status){
         switch(status){
-            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                 console.log("Permission not requested");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                 console.log("Permission denied");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                 console.log("Permission granted");
                 break;
         }
@@ -2402,20 +2402,20 @@ Should only be called if authorization status is NOT_REQUESTED. Calling it when 
 When calling this function, the message contained in the `NSPhotoLibraryUsageDescription` .plist key is displayed to the user;
 this plugin provides a default message, but you should override this with your specific reason for requesting access - see the [iOS usage description messages](#ios-usage-description-messages) section for how to customise it.
 
-    cordova.plugins.diagnostic.requestCameraRollAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestCameraRollAuthorization(successCallback, errorCallback);
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating the new authorization status:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestCameraRollAuthorization(function(status){
-        console.log("Authorization request for camera roll was " + (status == cordova.plugins.diagnostic.permissionStatus.GRANTED ? "granted" : "denied"));
+    cordova.plugins.diagnostic.hathway.requestCameraRollAuthorization(function(status){
+        console.log("Authorization request for camera roll was " + (status == cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED ? "granted" : "denied"));
     }, function(error){
         console.error(error);
     });
@@ -2434,7 +2434,7 @@ Platforms: iOS
 
 Constants for requesting/reporting the various types of remote notification permission types on iOS devices.
 
-    cordova.plugins.diagnostic.remoteNotificationType
+    cordova.plugins.diagnostic.hathway.remoteNotificationType
 
 The following notification types are defined:
 
@@ -2444,14 +2444,14 @@ The following notification types are defined:
 
 #### Example
 
-    cordova.plugins.diagnostic.getRemoteNotificationTypes(function(types){
-        if(types[cordova.plugins.diagnostic.remoteNotificationType.ALERT]){
+    cordova.plugins.diagnostic.hathway.getRemoteNotificationTypes(function(types){
+        if(types[cordova.plugins.diagnostic.hathway.remoteNotificationType.ALERT]){
             console.log("Has permission to display alerts");
         }
-        if(types[cordova.plugins.diagnostic.remoteNotificationType.SOUND]){
+        if(types[cordova.plugins.diagnostic.hathway.remoteNotificationType.SOUND]){
             console.log("Has permission to play sounds");
         }
-        if(types[cordova.plugins.diagnostic.remoteNotificationType.BADGE]){
+        if(types[cordova.plugins.diagnostic.hathway.remoteNotificationType.BADGE]){
             console.log("Has permission to modify icon badge");
         }
     }, function(error){
@@ -2468,7 +2468,7 @@ On Android, returns whether notifications for the app are not blocked.
 
 Returns true if app is registered for remote notifications **AND** "Allow Notifications" switch is ON **AND** alert style is not set to "None" (i.e. "Banners" or "Alerts").
 
-    cordova.plugins.diagnostic.isRemoteNotificationsEnabled(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isRemoteNotificationsEnabled(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
@@ -2477,7 +2477,7 @@ The function is passed a single boolean parameter which is TRUE if remote (push)
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isRemoteNotificationsEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isRemoteNotificationsEnabled(function(enabled){
         console.log("Remote notifications are " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2492,7 +2492,7 @@ Indicates if the app is registered for remote (push) notifications on the device
 Returns true if the app is registered for remote notifications and received its device token, or false if registration has not occurred, has failed, or has been denied by the user.
 Note that user preferences for notifications in the Settings app will not affect this.
 
-    cordova.plugins.diagnostic.isRegisteredForRemoteNotifications(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isRegisteredForRemoteNotifications(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
@@ -2501,7 +2501,7 @@ The function is passed a single boolean parameter which is TRUE if the device is
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isRegisteredForRemoteNotifications(function(registered){
+    cordova.plugins.diagnostic.hathway.isRegisteredForRemoteNotifications(function(registered){
         console.log("Device " + (registered ? "is" : "isn't") + " registered for remote notifications");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2515,19 +2515,19 @@ Indicates the current setting of notification types for the app in the Settings 
 
 Note: if "Allow Notifications" switch is OFF, all types will be returned as disabled.
 
-    cordova.plugins.diagnostic.getRemoteNotificationTypes(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getRemoteNotificationTypes(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
-The function is passed a single object parameter where the key is the notification type as a constant in [`cordova.plugins.diagnostic.remoteNotificationType`](#remotenotificationtype-constants) and the value is a boolean indicating whether it's enabled:
-     * `cordova.plugins.diagnostic.remoteNotificationType.ALERT` => alert style is not set to "None" (i.e. "Banners" or "Alerts").    
-     * `cordova.plugins.diagnostic.remoteNotificationType.BADGE` => "Badge App Icon" switch is ON.
-     * `cordova.plugins.diagnostic.remoteNotificationType.SOUND` => "Sounds"/"Alert Sound" switch is ON.
+The function is passed a single object parameter where the key is the notification type as a constant in [`cordova.plugins.diagnostic.hathway.remoteNotificationType`](#remotenotificationtype-constants) and the value is a boolean indicating whether it's enabled:
+     * `cordova.plugins.diagnostic.hathway.remoteNotificationType.ALERT` => alert style is not set to "None" (i.e. "Banners" or "Alerts").    
+     * `cordova.plugins.diagnostic.hathway.remoteNotificationType.BADGE` => "Badge App Icon" switch is ON.
+     * `cordova.plugins.diagnostic.hathway.remoteNotificationType.SOUND` => "Sounds"/"Alert Sound" switch is ON.
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getRemoteNotificationTypes(function(types){
+    cordova.plugins.diagnostic.hathway.getRemoteNotificationTypes(function(types){
         for(var type in types){
             console.log(type + " is " + (types[type] ? "enabled" : "disabled"));
         }
@@ -2542,26 +2542,26 @@ Platforms: iOS
 
 Returns the authorization status for the application to use Remote Notifications.
 
-    cordova.plugins.diagnostic.getRemoteNotificationsAuthorizationStatus(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getRemoteNotificationsAuthorizationStatus(successCallback, errorCallback);
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when operation is successful.
-The function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+The function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getRemoteNotificationsAuthorizationStatus(function(status){
+    cordova.plugins.diagnostic.hathway.getRemoteNotificationsAuthorizationStatus(function(status){
         switch(status){
-            case cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED:
                 console.log("Permission not yet requested");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS:
                 console.log("Permission denied");
                 break;
-            case cordova.plugins.diagnostic.permissionStatus.GRANTED:
+            case cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED:
                 console.log("Permission granted");
                 break;
         }
@@ -2576,7 +2576,7 @@ Platforms: iOS
 
 Requests remote notifications authorization for the application.
 
-    cordova.plugins.diagnostic.requestRemoteNotificationsAuthorization(params);
+    cordova.plugins.diagnostic.hathway.requestRemoteNotificationsAuthorization(params);
 
 #### Parameters
 
@@ -2584,7 +2584,7 @@ Requests remote notifications authorization for the application.
     - {Function} successCallback - The callback which will be called when operation is successful.
     - {Function} errorCallback -  The callback which will be called when operation encounters an error.
         * The function is passed a single string parameter containing the error message.
-    - {Array} types - list of notifications to register for as constants in [`cordova.plugins.diagnostic.remoteNotificationType`](#remotenotificationtype-constants).
+    - {Array} types - list of notifications to register for as constants in [`cordova.plugins.diagnostic.hathway.remoteNotificationType`](#remotenotificationtype-constants).
         * On iOS 13+ at least one type must be specified or the result will be permission denied and authorization will not be granted.
         * On iOS 12 and below if no type is specified, all notification types will be authorized. 
     - {Boolean} omitRegistration - If true, registration for remote notifications will not be carried out once remote notifications authorization is granted.
@@ -2592,7 +2592,7 @@ Requests remote notifications authorization for the application.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestRemoteNotificationsAuthorization({
+    cordova.plugins.diagnostic.hathway.requestRemoteNotificationsAuthorization({
         successCallback: function(){
             console.log("Successfully requested remote notifications authorization");
         },
@@ -2600,9 +2600,9 @@ Requests remote notifications authorization for the application.
            console.error("Error requesting remote notifications authorization: " + err);
         },
         types: [
-            cordova.plugins.diagnostic.remoteNotificationType.ALERT,
-            cordova.plugins.diagnostic.remoteNotificationType.SOUND,
-            cordova.plugins.diagnostic.remoteNotificationType.BADGE
+            cordova.plugins.diagnostic.hathway.remoteNotificationType.ALERT,
+            cordova.plugins.diagnostic.hathway.remoteNotificationType.SOUND,
+            cordova.plugins.diagnostic.hathway.remoteNotificationType.BADGE
         ],
         omitRegistration: false
     });
@@ -2624,7 +2624,7 @@ Checks if the application is authorized to use the microphone.
 Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return TRUE as permissions are already granted at installation time.
 
-    `cordova.plugins.diagnostic.isMicrophoneAuthorized(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.isMicrophoneAuthorized(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -2636,7 +2636,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isMicrophoneAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isMicrophoneAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "denied") + " access to the microphone");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2652,7 +2652,7 @@ Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
 
 
-    `cordova.plugins.diagnostic.getMicrophoneAuthorizationStatus(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.getMicrophoneAuthorizationStatus(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -2663,8 +2663,8 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getMicrophoneAuthorizationStatus(function(status){
-       if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getMicrophoneAuthorizationStatus(function(status){
+       if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
            console.log("Microphone use is authorized");
        }
     }, function(error){
@@ -2686,18 +2686,18 @@ Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will have no effect as the permissions are already granted at installation time.
 - This requests permission for `RECORD_AUDIO` which must be added to `AndroidManifest.xml` - see [Android permissions](#android-permissions).
 
-    cordova.plugins.diagnostic.requestMicrophoneAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestMicrophoneAuthorization(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating whether access to the microphone was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestMicrophoneAuthorization(function(status){
-       if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.requestMicrophoneAuthorization(function(status){
+       if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
            console.log("Microphone use is authorized");
        }
     }, function(error){
@@ -2721,7 +2721,7 @@ Checks if the application is authorized to use contacts (address book).
 Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return TRUE as permissions are already granted at installation time.
 
-    `cordova.plugins.diagnostic.isContactsAuthorized(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.isContactsAuthorized(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -2733,7 +2733,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isContactsAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isContactsAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "denied") + " access to contacts");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2748,7 +2748,7 @@ Returns the contacts authorization status for the application.
 Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
 
-    `cordova.plugins.diagnostic.getContactsAuthorizationStatus(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.getContactsAuthorizationStatus(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -2759,8 +2759,8 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getContactsAuthorizationStatus(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getContactsAuthorizationStatus(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("Contacts use is authorized");
         }
     }, function(error){
@@ -2783,18 +2783,18 @@ Notes for Android:
 - This requests permission for `READ_CONTACTS` run-time permission
 - Required permissions must be added to `AndroidManifest.xml` as appropriate - see [Android permissions](#android-permissions): `READ_CONTACTS, WRITE_CONTACTS, GET_ACCOUNTS`
 
-    cordova.plugins.diagnostic.requestContactsAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestContactsAuthorization(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating whether access to contacts was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestContactsAuthorization(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.requestContactsAuthorization(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("Contacts use is authorized");
         }
     }, function(error){
@@ -2822,7 +2822,7 @@ Notes for Android:
 Notes for iOS:
 - This relates to Calendar Events (not Calendar Reminders)
 
-    `cordova.plugins.diagnostic.isCalendarAuthorized(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.isCalendarAuthorized(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -2834,7 +2834,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isCalendarAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isCalendarAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "denied") + " access to calendar");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2852,7 +2852,7 @@ Notes for Android:
 Notes for iOS:
 - This relates to Calendar Events (not Calendar Reminders)
 
-    `cordova.plugins.diagnostic.getCalendarAuthorizationStatus(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.getCalendarAuthorizationStatus(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -2863,8 +2863,8 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getCalendarAuthorizationStatus(function(status){
-       if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getCalendarAuthorizationStatus(function(status){
+       if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
            console.log("Calendar use is authorized");
        }
     }, function(error){
@@ -2888,18 +2888,18 @@ Notes for Android:
 - This requests permission for `READ_CALENDAR` run-time permission
 - Required permissions must be added to `AndroidManifest.xml` as appropriate - see [Android permissions](#android-permissions): `READ_CALENDAR, WRITE_CALENDAR`
 
-    cordova.plugins.diagnostic.requestCalendarAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestCalendarAuthorization(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating whether access to calendar was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestCalendarAuthorization(function(status){
-       if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.requestCalendarAuthorization(function(status){
+       if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
            console.log("Calendar use is authorized");
        }
     }, function(error){
@@ -2921,7 +2921,7 @@ Platforms: iOS
 
 Checks if the application is authorized to use reminders.
 
-    cordova.plugins.diagnostic.isRemindersAuthorized(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isRemindersAuthorized(successCallback, errorCallback);
 
 #### Parameters
 
@@ -2933,7 +2933,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isRemindersAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isRemindersAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "denied") + " access to reminders");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -2945,7 +2945,7 @@ Platforms: iOS
 
 Returns the reminders authorization status for the application.
 
-    cordova.plugins.diagnostic.getRemindersAuthorizationStatus(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getRemindersAuthorizationStatus(successCallback, errorCallback);
 
 #### Parameters
 
@@ -2956,8 +2956,8 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getRemindersAuthorizationStatus(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getRemindersAuthorizationStatus(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("Reminders authorization allowed");
         }
     }, function(error){
@@ -2973,18 +2973,18 @@ Should only be called if authorization status is `NOT_REQUESTED`. Calling it whe
 When calling this function, the message contained in the `NSRemindersUsageDescription` .plist key is displayed to the user;
 this plugin provides a default message, but you should override this with your specific reason for requesting access - see the [iOS usage description messages](#ios-usage-description-messages) section for how to customise it.
 
-    cordova.plugins.diagnostic.requestRemindersAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestRemindersAuthorization(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating whether access to calendar was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestRemindersAuthorization(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.requestRemindersAuthorization(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("Reminders authorization allowed");
         }
     }, function(error){
@@ -3007,7 +3007,7 @@ Platforms: iOS
 
 Constants for reporting the various states of Motion Tracking on iOS devices.
 
-    cordova.plugins.diagnostic.motionStatus
+    cordova.plugins.diagnostic.hathway.motionStatus
 
 The following permission states are defined:
 
@@ -3028,8 +3028,8 @@ Pedometer Event Tracking is only available on iPhones with an M7 co-processor (o
 
 #### Example
 
-    if(status === cordova.plugins.diagnostic.motionStatus.NOT_REQUESTED){
-        cordova.plugins.diagnostic.requestMotionAuthorization(successCallback, errorCallback);
+    if(status === cordova.plugins.diagnostic.hathway.motionStatus.NOT_REQUESTED){
+        cordova.plugins.diagnostic.hathway.requestMotionAuthorization(successCallback, errorCallback);
     }
 
 ### isMotionAvailable()
@@ -3039,7 +3039,7 @@ Platforms: iOS
 Checks if motion tracking is available on the current device.
 Motion tracking is supported by iOS devices with an M7 co-processor (or above): that is iPhone 5s (or above), iPad Air (or above), iPad Mini 2 (or above).
 
-    cordova.plugins.diagnostic.isMotionAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isMotionAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -3051,7 +3051,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isMotionAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isMotionAvailable(function(available){
         console.log("Motion tracking is " + (available ? "available" : "not available") + " on this device");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -3066,7 +3066,7 @@ There's no direct way to determine if authorization was granted or denied, so th
 therefore, if the device supports motion tracking but not Pedometer Event Tracking, the outcome of requesting motion detection cannot be determined.
 Pedometer Event Tracking is only available on iPhones with an M7 co-processor (or above): that is iPhone 5s (or above). No iPads yet support it.
 
-    cordova.plugins.diagnostic.isMotionRequestOutcomeAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isMotionRequestOutcomeAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -3078,7 +3078,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isMotionRequestOutcomeAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isMotionRequestOutcomeAvailable(function(available){
         console.log("Motion tracking authorization request outcome is " + (available ? "available" : "not available") + " on this device");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -3101,24 +3101,24 @@ this plugin provides a default message, but you should override this with your s
 There's no direct way to determine if authorization was granted or denied, so the Pedometer API must be used to indirectly determine this:
 therefore, if the device supports motion tracking but not Pedometer Event Tracking, the outcome of requesting motion detection cannot be determined.
 
-    cordova.plugins.diagnostic.requestMotionAuthorization(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.requestMotionAuthorization(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating the result:
-   - `cordova.plugins.diagnostic.motionStatus.GRANTED` - user granted motion authorization.
-   - `cordova.plugins.diagnostic.motionStatus.DENIED_ALWAYS` - user denied authorization.
-   - `cordova.plugins.diagnostic.motionStatus.RESTRICTED` - user cannot grant motion authorization.
-   - `cordova.plugins.diagnostic.motionStatus.NOT_AVAILABLE` - device does not support Motion Tracking.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.GRANTED` - user granted motion authorization.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.DENIED_ALWAYS` - user denied authorization.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.RESTRICTED` - user cannot grant motion authorization.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.NOT_AVAILABLE` - device does not support Motion Tracking.
    Motion tracking is supported by iOS devices with an M7 co-processor (or above): that is iPhone 5s (or above), iPad Air (or above), iPad Mini 2 (or above).
-   - `cordova.plugins.diagnostic.motionStatus.NOT_DETERMINED` - authorization outcome cannot be determined because device does not support Pedometer Event Tracking.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.NOT_DETERMINED` - authorization outcome cannot be determined because device does not support Pedometer Event Tracking.
    Pedometer Event Tracking is only available on iPhones with an M7 co-processor (or above): that is iPhone 5s (or above). No iPads yet support it.
-   - `cordova.plugins.diagnostic.motionStatus.UNKNOWN` - motion tracking authorization is in an unknown state.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.UNKNOWN` - motion tracking authorization is in an unknown state.
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestMotionAuthorization(function(status){
+    cordova.plugins.diagnostic.hathway.requestMotionAuthorization(function(status){
         if(status === cordova.plugins.motionStatus.permissionStatus.GRANTED){
             console.log("Motion tracking authorized");
         }
@@ -3134,26 +3134,26 @@ Checks motion authorization status for the application.
 There's no direct way to determine if authorization was granted or denied, so the Pedometer API is used to indirectly determine this.
 
 
-    cordova.plugins.diagnostic.getMotionAuthorizationStatus(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.getMotionAuthorizationStatus(successCallback, errorCallback);
 
 #### Parameters
 - {Function} successCallback - The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating the result:
-   - `cordova.plugins.diagnostic.motionStatus.NOT_REQUESTED` - App has not yet requested this permission.
-   - `cordova.plugins.diagnostic.motionStatus.GRANTED` - user granted motion authorization.
-   - `cordova.plugins.diagnostic.motionStatus.DENIED_ALWAYS` - user denied authorization.
-   - `cordova.plugins.diagnostic.motionStatus.RESTRICTED` - user cannot grant motion authorization.
-   - `cordova.plugins.diagnostic.motionStatus.NOT_AVAILABLE` - device does not support Motion Tracking.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.NOT_REQUESTED` - App has not yet requested this permission.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.GRANTED` - user granted motion authorization.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.DENIED_ALWAYS` - user denied authorization.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.RESTRICTED` - user cannot grant motion authorization.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.NOT_AVAILABLE` - device does not support Motion Tracking.
    Motion tracking is supported by iOS devices with an M7 co-processor (or above): that is iPhone 5s (or above), iPad Air (or above), iPad Mini 2 (or above).
-   - `cordova.plugins.diagnostic.motionStatus.NOT_DETERMINED` - authorization outcome cannot be determined because device does not support Pedometer Event Tracking.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.NOT_DETERMINED` - authorization outcome cannot be determined because device does not support Pedometer Event Tracking.
    Pedometer Event Tracking is only available on iPhones with an M7 co-processor (or above): that is iPhone 5s (or above). No iPads yet support it.
-   - `cordova.plugins.diagnostic.motionStatus.UNKNOWN` - motion tracking authorization is in an unknown state.
+   - `cordova.plugins.diagnostic.hathway.motionStatus.UNKNOWN` - motion tracking authorization is in an unknown state.
 - {Function} errorCallback - The callback which will be called when an error occurs. The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getMotionAuthorizationStatus(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getMotionAuthorizationStatus(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("Motion authorization allowed");
         }
     }, function(error){
@@ -3174,7 +3174,7 @@ Platforms: Android
 
 Defines constants for the various NFC power states.
 
-    cordova.plugins.diagnostic.NFCState
+    cordova.plugins.diagnostic.hathway.NFCState
 
 #### Values
 
@@ -3186,21 +3186,21 @@ Defines constants for the various NFC power states.
 
 #### Example
 
-    cordova.plugins.diagnostic.registerNFCStateChangeHandler(function(state){
+    cordova.plugins.diagnostic.hathway.registerNFCStateChangeHandler(function(state){
         switch(state){
-            case cordova.plugins.diagnostic.NFCState.UNKNOWN:
+            case cordova.plugins.diagnostic.hathway.NFCState.UNKNOWN:
                 console.log("NFC state is unknown");
                 break;
-            case cordova.plugins.diagnostic.NFCState.POWERED_OFF:
+            case cordova.plugins.diagnostic.hathway.NFCState.POWERED_OFF:
                 console.log("NFC is powered off");
                 break;
-            case cordova.plugins.diagnostic.NFCState.POWERED_ON:
+            case cordova.plugins.diagnostic.hathway.NFCState.POWERED_ON:
                 console.log("NFC is powered on");
                 break;
-            case cordova.plugins.diagnostic.NFCState.POWERING_OFF:
+            case cordova.plugins.diagnostic.hathway.NFCState.POWERING_OFF:
                 console.log("NFC is powering off");
                 break;
-            case cordova.plugins.diagnostic.NFCState.POWERING_ON:
+            case cordova.plugins.diagnostic.hathway.NFCState.POWERING_ON:
                 console.log("NFC is powering on);
                 break;
         }
@@ -3216,7 +3216,7 @@ Platforms: Android
 
 Checks if NFC hardware is present on device.
 
-    cordova.plugins.diagnostic.isNFCPresent(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isNFCPresent(successCallback, errorCallback);
 
 #### Parameters
 
@@ -3228,7 +3228,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isNFCPresent(function(present){
+    cordova.plugins.diagnostic.hathway.isNFCPresent(function(present){
         console.log("NFC hardware is " + (present ? "present" : "absent"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -3243,7 +3243,7 @@ Checks if the device setting for NFC is switched on.
 
 Note: this operation **does not** require NFC permission in the manifest.
 
-    cordova.plugins.diagnostic.isNFCAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isNFCAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -3255,7 +3255,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isNFCEnabled(function(enabled){
+    cordova.plugins.diagnostic.hathway.isNFCEnabled(function(enabled){
         console.log("NFC is " + (enabled ? "enabled" : "disabled"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -3270,7 +3270,7 @@ Returns true if the device has NFC capabilities AND if NFC setting is switched o
 
 Note: this operation **does not** require NFC permission in the manifest.
 
-    cordova.plugins.diagnostic.isNFCAvailable(successCallback, errorCallback);
+    cordova.plugins.diagnostic.hathway.isNFCAvailable(successCallback, errorCallback);
 
 #### Parameters
 
@@ -3282,7 +3282,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isNFCAvailable(function(available){
+    cordova.plugins.diagnostic.hathway.isNFCAvailable(function(available){
         console.log("NFC is " + (available ? "available" : "not available"));
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -3297,16 +3297,16 @@ Pass in a falsey value to de-register the currently registered function.
 
 This is triggered when NFC state changes so is useful for detecting changes made in quick settings which would not result in pause/resume events being fired.
 
-    cordova.plugins.diagnostic.registerNFCStateChangeHandler(successCallback);
+    cordova.plugins.diagnostic.hathway.registerNFCStateChangeHandler(successCallback);
 
 #### Parameters
 
 - {Function} successCallback - function call when a change in NFC state occurs.
-The function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.NFCState`.
+The function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.NFCState`.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.registerNFCStateChangeHandler(function(state){
+    cordova.plugins.diagnostic.hathway.registerNFCStateChangeHandler(function(state){
         console.log("NFC state changed to: " + state);
     });    
 
@@ -3318,7 +3318,7 @@ Displays NFC settings to allow user to enable NFC.
 
 On some versions of Android, this may open the same page as `switchToWirelessSettings()` if the NFC switch is on the Wireless settings page.
 
-    cordova.plugins.diagnostic.switchToNFCSettings();
+    cordova.plugins.diagnostic.hathway.switchToNFCSettings();
 
 ## External storage module
 
@@ -3338,7 +3338,7 @@ Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return TRUE as permissions are already granted at installation time.
 - This checks for `READ_EXTERNAL_STORAGE` `CAMERA` run-time permission.
 
-    `cordova.plugins.diagnostic.isExternalStorageAuthorized(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.isExternalStorageAuthorized(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -3350,7 +3350,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.isExternalStorageAuthorized(function(authorized){
+    cordova.plugins.diagnostic.hathway.isExternalStorageAuthorized(function(authorized){
         console.log("App is " + (authorized ? "authorized" : "denied") + " access to the external storage");
     }, function(error){
         console.error("The following error occurred: "+error);
@@ -3366,7 +3366,7 @@ Notes for Android:
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
 - This checks for `READ_EXTERNAL_STORAGE` run-time permission.
 
-    `cordova.plugins.diagnostic.getExternalStorageAuthorizationStatus(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.getExternalStorageAuthorizationStatus(successCallback, errorCallback);`
 
 #### Parameters
 
@@ -3377,8 +3377,8 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getExternalStorageAuthorizationStatus(function(status){
-        if(status === cordova.plugins.diagnostic.permissionStatus.GRANTED){
+    cordova.plugins.diagnostic.hathway.getExternalStorageAuthorizationStatus(function(status){
+        if(status === cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED){
             console.log("External storage use is authorized");
         }
     }, function(error){
@@ -3394,20 +3394,20 @@ Requests external storage authorization for the application.
 - This is intended for Android 6 / API 23 and above. Calling on Android 5.1 / API 22 and below will have no effect as the permissions are already granted at installation time.
 - This requests permission for `READ_EXTERNAL_STORAGE` run-time permission which must be added to `AndroidManifest.xml`.
 
-    `cordova.plugins.diagnostic.requestExternalStorageAuthorization(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.requestExternalStorageAuthorization(successCallback, errorCallback);`
 
 #### Parameters
 
 - {Function} successCallback -  The callback which will be called when operation is successful.
 The function is passed a single string parameter indicating whether access to the external storage was granted or denied:
-`cordova.plugins.diagnostic.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
+`cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED` or `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
 - {Function} errorCallback -  The callback which will be called when operation encounters an error.
 The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.requestExternalStorageAuthorization(function(status){
-        console.log("Authorization request for external storage use was " + (status == cordova.plugins.diagnostic.permissionStatus.GRANTED ? "granted" : "denied"));
+    cordova.plugins.diagnostic.hathway.requestExternalStorageAuthorization(function(status){
+        console.log("Authorization request for external storage use was " + (status == cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED ? "granted" : "denied"));
     }, function(error){
         console.error(error);
     });
@@ -3424,7 +3424,7 @@ This differs from the "external directories" returned by [cordova-plugin-file](h
 For example, on a Samsung Galaxy S4 running Android 7.1.1:
 
  - `cordova.file.externalRootDirectory` returns `file:///storage/emulated/0/`
- - `cordova.file.externalApplicationStorageDirectory` returns `file:///storage/emulated/0/Android/data/cordova.plugins.diagnostic.example/`
+ - `cordova.file.externalApplicationStorageDirectory` returns `file:///storage/emulated/0/Android/data/cordova.plugins.diagnostic.hathway.example/`
 
  which are on non-removable internal storage.
 
@@ -3432,8 +3432,8 @@ For example, on a Samsung Galaxy S4 running Android 7.1.1:
 
     ```
     [{
-        "path": "/storage/4975-1401/Android/data/cordova.plugins.diagnostic.example/files",
-        "filePath": "file:///storage/4975-1401/Android/data/cordova.plugins.diagnostic.example/files",
+        "path": "/storage/4975-1401/Android/data/cordova.plugins.diagnostic.hathway.example/files",
+        "filePath": "file:///storage/4975-1401/Android/data/cordova.plugins.diagnostic.hathway.example/files",
         "canWrite": true,
         "freeSpace": 16254009344,
         "type": "application"
@@ -3450,7 +3450,7 @@ For example, on a Samsung Galaxy S4 running Android 7.1.1:
 
 - Requires permission for `READ_EXTERNAL_STORAGE` run-time permission which must be added to `AndroidManifest.xml`.
 
-    `cordova.plugins.diagnostic.getExternalSdCardDetails(successCallback, errorCallback);`
+    `cordova.plugins.diagnostic.hathway.getExternalSdCardDetails(successCallback, errorCallback);`
     
 - Note: this function is intended to find paths of external removable SD cards on which the SD card adapter is directly mounted on the device, such as those in the Samsung Galaxy S range of devices. It explicitly attempts to filter out non-SD card storage paths such as OTG devices since access to these devices on Android 6.+ via the File API requires root access and normal access requires use of the Storage Access Framework.
 
@@ -3469,7 +3469,7 @@ The function is passed a single string parameter containing the error message.
 
 #### Example usage
 
-    cordova.plugins.diagnostic.getExternalSdCardDetails(function(details){
+    cordova.plugins.diagnostic.hathway.getExternalSdCardDetails(function(details){
         details.forEach(function(detail){
             if(detail.canWrite && details.freeSpace > 100000){
                 cordova.file.externalSdCardDirectory = detail.filePath;
@@ -3514,32 +3514,32 @@ This plugin supports [checking](#getpermissionauthorizationstatus) and [requesti
 
 ##### "Dangerous" runtime permissions
 
-The plugin defines the [full list of dangersous permissions available in API 23](http://developer.android.com/guide/topics/security/permissions.html#perm-groups) as a list of constants available via the `cordova.plugins.diagnostic.runtimePermission` object. The following permissions are available:
+The plugin defines the [full list of dangersous permissions available in API 23](http://developer.android.com/guide/topics/security/permissions.html#perm-groups) as a list of constants available via the `cordova.plugins.diagnostic.hathway.runtimePermission` object. The following permissions are available:
 
-- `cordova.plugins.diagnostic.permission.READ_CALENDAR`
-- `cordova.plugins.diagnostic.permission.WRITE_CALENDAR`
-- `cordova.plugins.diagnostic.permission.CAMERA`
-- `cordova.plugins.diagnostic.permission.READ_CONTACTS`
-- `cordova.plugins.diagnostic.permission.WRITE_CONTACTS`
-- `cordova.plugins.diagnostic.permission.GET_ACCOUNTS`
-- `cordova.plugins.diagnostic.permission.ACCESS_FINE_LOCATION`
-- `cordova.plugins.diagnostic.permission.ACCESS_COARSE_LOCATION`
-- `cordova.plugins.diagnostic.permission.RECORD_AUDIO`
-- `cordova.plugins.diagnostic.permission.READ_PHONE_STATE`
-- `cordova.plugins.diagnostic.permission.CALL_PHONE`
-- `cordova.plugins.diagnostic.permission.ADD_VOICEMAIL`
-- `cordova.plugins.diagnostic.permission.USE_SIP`
-- `cordova.plugins.diagnostic.permission.PROCESS_OUTGOING_CALLS`
-- `cordova.plugins.diagnostic.permission.READ_CALL_LOG`
-- `cordova.plugins.diagnostic.permission.WRITE_CALL_LOG`
-- `cordova.plugins.diagnostic.permission.SEND_SMS`
-- `cordova.plugins.diagnostic.permission.RECEIVE_SMS`
-- `cordova.plugins.diagnostic.permission.READ_SMS`
-- `cordova.plugins.diagnostic.permission.RECEIVE_WAP_PUSH`
-- `cordova.plugins.diagnostic.permission.RECEIVE_MMS`
-- `cordova.plugins.diagnostic.permission.WRITE_EXTERNAL_STORAGE`
-- `cordova.plugins.diagnostic.permission.READ_EXTERNAL_STORAGE`
-- `cordova.plugins.diagnostic.permission.BODY_SENSORS`
+- `cordova.plugins.diagnostic.hathway.permission.READ_CALENDAR`
+- `cordova.plugins.diagnostic.hathway.permission.WRITE_CALENDAR`
+- `cordova.plugins.diagnostic.hathway.permission.CAMERA`
+- `cordova.plugins.diagnostic.hathway.permission.READ_CONTACTS`
+- `cordova.plugins.diagnostic.hathway.permission.WRITE_CONTACTS`
+- `cordova.plugins.diagnostic.hathway.permission.GET_ACCOUNTS`
+- `cordova.plugins.diagnostic.hathway.permission.ACCESS_FINE_LOCATION`
+- `cordova.plugins.diagnostic.hathway.permission.ACCESS_COARSE_LOCATION`
+- `cordova.plugins.diagnostic.hathway.permission.RECORD_AUDIO`
+- `cordova.plugins.diagnostic.hathway.permission.READ_PHONE_STATE`
+- `cordova.plugins.diagnostic.hathway.permission.CALL_PHONE`
+- `cordova.plugins.diagnostic.hathway.permission.ADD_VOICEMAIL`
+- `cordova.plugins.diagnostic.hathway.permission.USE_SIP`
+- `cordova.plugins.diagnostic.hathway.permission.PROCESS_OUTGOING_CALLS`
+- `cordova.plugins.diagnostic.hathway.permission.READ_CALL_LOG`
+- `cordova.plugins.diagnostic.hathway.permission.WRITE_CALL_LOG`
+- `cordova.plugins.diagnostic.hathway.permission.SEND_SMS`
+- `cordova.plugins.diagnostic.hathway.permission.RECEIVE_SMS`
+- `cordova.plugins.diagnostic.hathway.permission.READ_SMS`
+- `cordova.plugins.diagnostic.hathway.permission.RECEIVE_WAP_PUSH`
+- `cordova.plugins.diagnostic.hathway.permission.RECEIVE_MMS`
+- `cordova.plugins.diagnostic.hathway.permission.WRITE_EXTERNAL_STORAGE`
+- `cordova.plugins.diagnostic.hathway.permission.READ_EXTERNAL_STORAGE`
+- `cordova.plugins.diagnostic.hathway.permission.BODY_SENSORS`
 
 
 ##### Runtime permission groups

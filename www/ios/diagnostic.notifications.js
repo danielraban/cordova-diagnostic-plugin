@@ -14,7 +14,7 @@ var Diagnostic_Notifications = (function(){
      *********************/
     var Diagnostic_Notifications = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -69,10 +69,10 @@ var Diagnostic_Notifications = (function(){
      * Note: if "Allow Notifications" switch is OFF, all types will be returned as disabled.
      *
      * @param {Function} successCallback - The callback which will be called when operation is successful.
-     * This callback function is passed a single object parameter where the key is the notification type as a constant in `cordova.plugins.diagnostic.remoteNotificationType` and the value is a boolean indicating whether it's enabled:
-     * cordova.plugins.diagnostic.remoteNotificationType.ALERT => alert style is not set to "None" (i.e. "Banners" or "Alerts").
-     * cordova.plugins.diagnostic.remoteNotificationType.BADGE => "Badge App Icon" switch is ON.
-     * cordova.plugins.diagnostic.remoteNotificationType.SOUND => "Sounds"/"Alert Sound" switch is ON.
+     * This callback function is passed a single object parameter where the key is the notification type as a constant in `cordova.plugins.diagnostic.hathway.remoteNotificationType` and the value is a boolean indicating whether it's enabled:
+     * cordova.plugins.diagnostic.hathway.remoteNotificationType.ALERT => alert style is not set to "None" (i.e. "Banners" or "Alerts").
+     * cordova.plugins.diagnostic.hathway.remoteNotificationType.BADGE => "Badge App Icon" switch is ON.
+     * cordova.plugins.diagnostic.hathway.remoteNotificationType.SOUND => "Sounds"/"Alert Sound" switch is ON.
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
@@ -115,11 +115,11 @@ var Diagnostic_Notifications = (function(){
      *
      * @param {Object} params - (optional) parameters:
      *  - {Function} successCallback - The callback which will be called when operation is successful.
-     * This callback function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+     * This callback function is passed a single string parameter which indicates the authorization status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
      * Possible values are:
-     * `cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED`
-     * `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
-     * `cordova.plugins.diagnostic.permissionStatus.GRANTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED`
      *  - {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
@@ -150,7 +150,7 @@ var Diagnostic_Notifications = (function(){
      *  - {Function} successCallback - The callback which will be called when operation is successful.
      *  - {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
-     * @param {Array} types - list of notifications to register for as constants in `cordova.plugins.diagnostic.remoteNotificationType`.
+     * @param {Array} types - list of notifications to register for as constants in `cordova.plugins.diagnostic.hathway.remoteNotificationType`.
      * If not specified, defaults to all notification types.
      * @param {Boolean} omitRegistration - If true, registration for remote notifications will not be carried out once remote notifications authorization is granted.
      * Defaults to false (registration will automatically take place once authorization is granted).

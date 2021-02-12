@@ -14,7 +14,7 @@ var Diagnostic_Location = (function(){
      *********************/
     var Diagnostic_Location = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -109,12 +109,12 @@ var Diagnostic_Location = (function(){
      * Returns the location authorization status for the application.
      *
      * @param {Function} successCallback - The callback which will be called when operation is successful.
-     * This callback function is passed a single string parameter which indicates the location authorization status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+     * This callback function is passed a single string parameter which indicates the location authorization status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
      * Possible values are:
-     * `cordova.plugins.diagnostic.permissionStatus.NOT_REQUESTED`
-     * `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
-     * `cordova.plugins.diagnostic.permissionStatus.GRANTED`
-     * `cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.NOT_REQUESTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED_WHEN_IN_USE`
      * Note that `GRANTED` indicates the app is always granted permission (even when in background).
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
@@ -131,10 +131,10 @@ var Diagnostic_Location = (function(){
      * Returns the location accuracy authorization for the application.
      *
      * @param {Function} successCallback - The callback which will be called when operation is successful.
-     * This callback function is passed a single string parameter which indicates the location accuracy authorization as a constant in `cordova.plugins.diagnostic.locationAccuracyAuthorization`.
+     * This callback function is passed a single string parameter which indicates the location accuracy authorization as a constant in `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization`.
      * Possible values are:
-     * `cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL`
-     * `cordova.plugins.diagnostic.locationAccuracyAuthorization.REDUCED`
+     * `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.FULL`
+     * `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.REDUCED`
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
@@ -152,15 +152,15 @@ var Diagnostic_Location = (function(){
      * Should only be called if authorization status is NOT_REQUESTED. Calling it when in any other state will have no effect.
      *
      * @param {Function} successCallback - Invoked in response to the user's choice in the permission dialog.
-     * It is passed a single string parameter which defines the resulting authorisation status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+     * It is passed a single string parameter which defines the resulting authorisation status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
      * Possible values are:
-     * `cordova.plugins.diagnostic.permissionStatus.DENIED_ALWAYS`
-     * `cordova.plugins.diagnostic.permissionStatus.GRANTED`
-     * `cordova.plugins.diagnostic.permissionStatus.GRANTED_WHEN_IN_USE`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.DENIED_ALWAYS`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED`
+     * `cordova.plugins.diagnostic.hathway.permissionStatus.GRANTED_WHEN_IN_USE`
      * @param {Function} errorCallback -  The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
-     * @param {String} mode - (optional) location authorization mode as a constant in `cordova.plugins.diagnostic.locationAuthorizationMode`.
-     * If not specified, defaults to `cordova.plugins.diagnostic.locationAuthorizationMode.WHEN_IN_USE`.
+     * @param {String} mode - (optional) location authorization mode as a constant in `cordova.plugins.diagnostic.hathway.locationAuthorizationMode`.
+     * If not specified, defaults to `cordova.plugins.diagnostic.hathway.locationAuthorizationMode.WHEN_IN_USE`.
      */
     Diagnostic_Location.requestLocationAuthorization = function(successCallback, errorCallback, mode) {
         return cordova.exec(successCallback,
@@ -180,10 +180,10 @@ var Diagnostic_Location = (function(){
      * which contains a message explaining the user why your app needs their exact location.
      * This will be presented to the user via permission dialog in which they can either accept or reject the request.
      * @param {Function} successCallback - (optional) Invoked in response to the user's choice in the permission dialog.
-     * It is passed a single string parameter which defines the resulting accuracy authorization as a constant in `cordova.plugins.diagnostic.locationAccuracyAuthorization`.
+     * It is passed a single string parameter which defines the resulting accuracy authorization as a constant in `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization`.
      * Possible values are:
-     * `cordova.plugins.diagnostic.locationAccuracyAuthorization.FULL`
-     * `cordova.plugins.diagnostic.locationAccuracyAuthorization.REDUCED`
+     * `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.FULL`
+     * `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization.REDUCED`
      * @param {Function} errorCallback -  (optional) The callback which will be called when operation encounters an error.
      * This callback function is passed a single string parameter containing the error message.
      */
@@ -211,7 +211,7 @@ var Diagnostic_Location = (function(){
      * Pass in a falsey value to de-register the currently registered function.
      *
      * @param {Function} successCallback -  The callback which will be called when the Location state changes.
-     * This callback function is passed a single string parameter indicating the new location authorisation status as a constant in `cordova.plugins.diagnostic.permissionStatus`.
+     * This callback function is passed a single string parameter indicating the new location authorisation status as a constant in `cordova.plugins.diagnostic.hathway.permissionStatus`.
      */
     Diagnostic_Location.registerLocationStateChangeHandler = function(successCallback) {
         Diagnostic_Location._onLocationStateChange = successCallback || function(){};
@@ -225,7 +225,7 @@ var Diagnostic_Location = (function(){
      * Pass in a falsey value to de-register the currently registered function.
      *
      * @param {Function} successCallback -  The callback which will be called when the location accuracy authorization changes.
-     * This callback function is passed a single string parameter indicating the new location accuracy authorization as a constant in `cordova.plugins.diagnostic.locationAccuracyAuthorization`.
+     * This callback function is passed a single string parameter indicating the new location accuracy authorization as a constant in `cordova.plugins.diagnostic.hathway.locationAccuracyAuthorization`.
      */
     Diagnostic_Location.registerLocationAccuracyAuthorizationChangeHandler = function(successCallback) {
         Diagnostic_Location._onLocationAccuracyAuthorizationChange = successCallback || function(){};

@@ -14,7 +14,7 @@ var Diagnostic_Camera = (function(){
      *********************/
     var Diagnostic_Camera = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -128,7 +128,7 @@ var Diagnostic_Camera = (function(){
      * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will have no effect as the permissions are already granted at installation time.
      * @param {Object} params - (optional) parameters:
      *  - {Function} successCallback - function to call on successful request for runtime permissions.
-     * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
      *  - {Function} errorCallback - function to call on failure to request authorisation.
      *  - {Boolean} externalStorage - (Android only) If true, requests permission for READ_EXTERNAL_STORAGE in addition to CAMERA run-time permission.
      *  cordova-plugin-camera@2.2+ requires both of these permissions. Defaults to true.
@@ -153,7 +153,7 @@ var Diagnostic_Camera = (function(){
      * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
      * @param {Object} params - (optional) parameters:
      *  - {Function} successCallback - function to call on successful request for runtime permissions status.
-     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
      *  - {Function} errorCallback - function to call on failure to request authorisation status.
      *  - {Boolean} externalStorage - (Android only) If true, checks permission for READ_EXTERNAL_STORAGE in addition to CAMERA run-time permission.
      *  cordova-plugin-camera@2.2+ requires both of these permissions. Defaults to true.

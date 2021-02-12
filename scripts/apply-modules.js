@@ -5,7 +5,7 @@
  **********/
 
 const PLUGIN_NAME = "Diagnostic plugin";
-const PLUGIN_ID = "cordova.plugins.diagnostic";
+const PLUGIN_ID = "cordova.plugins.diagnostic.hathway";
 const PREFERENCE_NAME = PLUGIN_ID + ".modules";
 
 const MODULES = [

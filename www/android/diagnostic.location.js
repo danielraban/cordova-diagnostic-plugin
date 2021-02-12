@@ -14,7 +14,7 @@ var Diagnostic_Location = (function(){
      *********************/
     var Diagnostic_Location = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *
@@ -187,7 +187,7 @@ var Diagnostic_Location = (function(){
      * Returns the current location mode setting for the device.
      *
      * @param {Function} successCallback -  The callback which will be called when the operation is successful.
-     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.locationMode`.
+     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.locationMode`.
      * @param {Function} errorCallback -  The callback which will be called when the operation encounters an error.
      *  This callback function is passed a single string parameter containing the error message.
      */
@@ -214,10 +214,10 @@ var Diagnostic_Location = (function(){
      * Requests location authorization for the application.
      * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will have no effect as the permissions are already granted at installation time.
      * @param {Function} successCallback - function to call on successful request for runtime permissions.
-     * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * This callback function is passed a single string parameter which defines the resulting authorisation status as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
      * @param {Function} errorCallback - function to call on failure to request authorisation.
-     * @param {String} mode - (optional) location authorization mode as a constant in `cordova.plugins.diagnostic.locationAuthorizationMode`.
-     * If not specified, defaults to `cordova.plugins.diagnostic.locationAuthorizationMode.WHEN_IN_USE`.
+     * @param {String} mode - (optional) location authorization mode as a constant in `cordova.plugins.diagnostic.hathway.locationAuthorizationMode`.
+     * If not specified, defaults to `cordova.plugins.diagnostic.hathway.locationAuthorizationMode.WHEN_IN_USE`.
      */
     Diagnostic_Location.requestLocationAuthorization = function(successCallback, errorCallback, mode){
         function onSuccess(statuses){
@@ -236,7 +236,7 @@ var Diagnostic_Location = (function(){
      * Returns the combined location authorization status for the application.
      * Note: this is intended for Android 6 / API 23 and above. Calling on Android 5 / API 22 and below will always return GRANTED status as permissions are already granted at installation time.
      * @param {Function} successCallback - function to call on successful request for runtime permissions status.
-     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.permissionStatus.
+     * This callback function is passed a single string parameter which defines the current authorisation status as a value in cordova.plugins.diagnostic.hathway.permissionStatus.
      * @param {Function} errorCallback - function to call on failure to request authorisation status.
      */
     Diagnostic_Location.getLocationAuthorizationStatus = function(successCallback, errorCallback){
@@ -269,7 +269,7 @@ var Diagnostic_Location = (function(){
      * Pass in a falsey value to de-register the currently registered function.
      *
      * @param {Function} successCallback -  The callback which will be called when the Location state changes.
-     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.locationMode`.
+     * This callback function is passed a single string parameter defined as a constant in `cordova.plugins.diagnostic.hathway.locationMode`.
      */
     Diagnostic_Location.registerLocationStateChangeHandler = function(successCallback) {
         Diagnostic_Location._onLocationStateChange = successCallback || function(){};

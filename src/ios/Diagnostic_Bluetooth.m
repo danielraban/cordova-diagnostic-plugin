@@ -163,7 +163,7 @@ static NSString*const LOG_TAG = @"Diagnostic_Bluetooth[native]";
 
 - (void) centralManagerDidUpdateState:(CBCentralManager *)central {
     NSString* state = [self getBluetoothState];
-    NSString* jsString = [NSString stringWithFormat:@"cordova.plugins.diagnostic.bluetooth._onBluetoothStateChange(\"%@\");", state];
+    NSString* jsString = [NSString stringWithFormat:@"cordova.plugins.diagnostic.hathway.bluetooth._onBluetoothStateChange(\"%@\");", state];
     [diagnostic executeGlobalJavascript:jsString];
 }
 

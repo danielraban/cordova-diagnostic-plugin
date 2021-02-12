@@ -14,7 +14,7 @@ var Diagnostic_Notifications = (function(){
      *********************/
     var Diagnostic_Notifications = {};
 
-    var Diagnostic = require("cordova.plugins.diagnostic.Diagnostic");
+    var Diagnostic = require("cordova.plugins.diagnostic.hathway.Diagnostic");
 
     /********************
      *

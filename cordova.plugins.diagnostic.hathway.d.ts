@@ -1,4 +1,4 @@
-// Type definitions for cordova.plugins.diagnostic v4
+// Type definitions for cordova.plugins.diagnostic.hathway v4
 // Project: https://github.com/danielraban/cordova-diagnostic-plugin
 // Definitions by: Dave Alden <https://github.com/danielraban/>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped

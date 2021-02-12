@@ -87,7 +87,6 @@ public class Diagnostic extends CordovaPlugin{
         Diagnostic.addBiDirMapEntry(_permissionsMap, "GET_ACCOUNTS", Manifest.permission.GET_ACCOUNTS);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "ACCESS_FINE_LOCATION", Manifest.permission.ACCESS_FINE_LOCATION);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "ACCESS_COARSE_LOCATION", Manifest.permission.ACCESS_COARSE_LOCATION);
-        // Add as string as Manifest.permission.ACCESS_BACKGROUND_LOCATION not defined in < API 29:
         Diagnostic.addBiDirMapEntry(_permissionsMap, "RECORD_AUDIO", Manifest.permission.RECORD_AUDIO);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "READ_PHONE_STATE", Manifest.permission.READ_PHONE_STATE);
         Diagnostic.addBiDirMapEntry(_permissionsMap, "CALL_PHONE", Manifest.permission.CALL_PHONE);
@@ -148,7 +147,7 @@ public class Diagnostic extends CordovaPlugin{
     public static final String CPU_ARCH_MIPS = "MIPS";
     public static final String CPU_ARCH_MIPS_64 = "MIPS_64";
 
-    protected static final String externalStorageClassName = "cordova.plugins.Diagnostic_External_Storage";
+    protected static final String externalStorageClassName = "cordova.plugins.diagnostic.hathway_External_Storage";
     protected static final Integer GET_EXTERNAL_SD_CARD_DETAILS_PERMISSION_REQUEST = 1000;
 
     /*************
@@ -660,7 +659,7 @@ public class Diagnostic extends CordovaPlugin{
     }
 
     public void executePluginJavascript(final String jsString){
-        executeGlobalJavascript("cordova.plugins.diagnostic." + jsString);
+        executeGlobalJavascript("cordova.plugins.diagnostic.hathway." + jsString);
     }
 
     /**
